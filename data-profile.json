@@ -1,0 +1,2578 @@
+{
+  "overview": {
+    "total_files": 12,
+    "total_records": 374141,
+    "total_size_mb": 112.61
+  },
+  "files": {
+    "lok sabha :: Allocated Limit for Honble MPs -Loksabha.csv": {
+      "house": "lok sabha",
+      "file_name": "Allocated Limit for Honble MPs -Loksabha.csv",
+      "size_mb": 0.03,
+      "row_count": 544,
+      "column_count": 5,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "State",
+        "Hon'ble Members of Parliaments",
+        "Constituency",
+        "Allocated AMOUNT ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 543,
+            "min": 1.0,
+            "max": 543.0,
+            "avg": 272.0,
+            "total": 147696.0
+          }
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.18,
+          "samples": [
+            "Maharashtra",
+            "Jammu And Kashmir",
+            "Bihar",
+            "West Bengal",
+            "West Bengal"
+          ]
+        },
+        "Hon'ble Members of Parliaments": {
+          "name": "Hon'ble Members of Parliaments",
+          "null_count": 1,
+          "null_percentage": 0.18,
+          "samples": [
+            "AASHTIKAR PATIL NAGESH BAPURAO",
+            "ABDUL RASHID SHEIKH",
+            "ABHAY KUMAR SINHA",
+            "ABHIJIT GANGOPADHYAY",
+            "Abu Taher Khan"
+          ]
+        },
+        "Constituency": {
+          "name": "Constituency",
+          "null_count": 1,
+          "null_percentage": 0.18,
+          "samples": [
+            "HINGOLI",
+            "BARAMULLAH",
+            "AURANGABAD_BR",
+            "TAMLUK",
+            "MURSHIDABAD"
+          ]
+        },
+        "Allocated AMOUNT ( ₹ )": {
+          "name": "Allocated AMOUNT ( ₹ )",
+          "null_count": 1,
+          "null_percentage": 0.18,
+          "samples": [
+            "190289442",
+            "147000000",
+            "147000000",
+            "147000000",
+            "147000000"
+          ],
+          "numeric_stats": {
+            "count": 543,
+            "min": 49000000.0,
+            "max": 83062104294.53,
+            "avg": 305937769.04,
+            "total": 166124208589.06
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "State": "Maharashtra",
+          "Hon'ble Members of Parliaments": "AASHTIKAR PATIL NAGESH BAPURAO",
+          "Constituency": "HINGOLI",
+          "Allocated AMOUNT ( ₹ )": "190289442"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "State": "Jammu And Kashmir",
+          "Hon'ble Members of Parliaments": "ABDUL RASHID SHEIKH",
+          "Constituency": "BARAMULLAH",
+          "Allocated AMOUNT ( ₹ )": "147000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "State": "Bihar",
+          "Hon'ble Members of Parliaments": "ABHAY KUMAR SINHA",
+          "Constituency": "AURANGABAD_BR",
+          "Allocated AMOUNT ( ₹ )": "147000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "State": "West Bengal",
+          "Hon'ble Members of Parliaments": "ABHIJIT GANGOPADHYAY",
+          "Constituency": "TAMLUK",
+          "Allocated AMOUNT ( ₹ )": "147000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "State": "West Bengal",
+          "Hon'ble Members of Parliaments": "Abu Taher Khan",
+          "Constituency": "MURSHIDABAD",
+          "Allocated AMOUNT ( ₹ )": "147000000"
+        }
+      ]
+    },
+    "lok sabha :: Amount consented for Calamity-Loksabha.csv": {
+      "house": "lok sabha",
+      "file_name": "Amount consented for Calamity-Loksabha.csv",
+      "size_mb": 0.0,
+      "row_count": 13,
+      "column_count": 6,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Calamity Type",
+        "Calamity Name",
+        "Hon'ble Members of Parliament",
+        "Date of Consent",
+        "Consent Amount ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 12,
+            "min": 1.0,
+            "max": 12.0,
+            "avg": 6.5,
+            "total": 78.0
+          }
+        },
+        "Calamity Type": {
+          "name": "Calamity Type",
+          "null_count": 1,
+          "null_percentage": 7.69,
+          "samples": [
+            "National Calamity",
+            "National Calamity",
+            "National Calamity",
+            "National Calamity",
+            "National Calamity"
+          ]
+        },
+        "Calamity Name": {
+          "name": "Calamity Name",
+          "null_count": 1,
+          "null_percentage": 7.69,
+          "samples": [
+            "Flood 2025 in Punjab",
+            "Flood 2025 in Punjab",
+            "Flood 2025 in Punjab",
+            "Andhra Pradesh rainfall and consequent floods - 2024",
+            "Meppadi landslides 2024"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 7.69,
+          "samples": [
+            "Shri Gurjeet Singh Aujla",
+            "GURMEET SINGH MEET HAYER",
+            "Shri Jual Oram",
+            "Krishna Prasad Tenneti",
+            "SHAFI PARAMBIL"
+          ]
+        },
+        "Date of Consent": {
+          "name": "Date of Consent",
+          "null_count": 1,
+          "null_percentage": 7.69,
+          "samples": [
+            "07-Dec-2025",
+            "03-Nov-2025",
+            "10-Oct-2025",
+            "26-Mar-2025",
+            "02-Mar-2025"
+          ]
+        },
+        "Consent Amount ( ₹ )": {
+          "name": "Consent Amount ( ₹ )",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "7067400",
+            "7500000",
+            "10000000",
+            "1000000",
+            "2500000"
+          ],
+          "numeric_stats": {
+            "count": 13,
+            "min": 500000.0,
+            "max": 40567400.0,
+            "avg": 6241138.46,
+            "total": 81134800.0
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Shri Gurjeet Singh Aujla",
+          "Date of Consent": "07-Dec-2025",
+          "Consent Amount ( ₹ )": "7067400"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "GURMEET SINGH MEET HAYER",
+          "Date of Consent": "03-Nov-2025",
+          "Consent Amount ( ₹ )": "7500000"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Shri Jual Oram",
+          "Date of Consent": "10-Oct-2025",
+          "Consent Amount ( ₹ )": "10000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Andhra Pradesh rainfall and consequent floods - 2024",
+          "Hon'ble Members of Parliament": "Krishna Prasad Tenneti",
+          "Date of Consent": "26-Mar-2025",
+          "Consent Amount ( ₹ )": "1000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Meppadi landslides 2024",
+          "Hon'ble Members of Parliament": "SHAFI PARAMBIL",
+          "Date of Consent": "02-Mar-2025",
+          "Consent Amount ( ₹ )": "2500000"
+        }
+      ]
+    },
+    "lok sabha :: Expenditure on Completed and On-going Works as on Date-Loksabha.csv": {
+      "house": "lok sabha",
+      "file_name": "Expenditure on Completed and On-going Works as on Date-Loksabha.csv",
+      "size_mb": 19.64,
+      "row_count": 81695,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "work_id_col": "Work ID",
+      "unique_work_ids": 55105,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "State",
+        "Work",
+        "Work ID",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Expenditure Date",
+        "Vendor Name",
+        "Payment Status",
+        "Fund Disbursed Amount ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 81694,
+            "min": 1.0,
+            "max": 81694.0,
+            "avg": 40847.5,
+            "total": 3336995665.0
+          }
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Karnataka",
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh"
+          ]
+        },
+        "Work": {
+          "name": "Work",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Construction of footpaths and pedestrian ways",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system"
+          ]
+        },
+        "Work ID": {
+          "name": "Work ID",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "WS/MP18080/2025-2026/181962",
+            "WS/MP18218/2025-2026/233878",
+            "WS/MP18218/2025-2026/233777",
+            "WS/MP18218/2025-2026/233875",
+            "WS/MP18218/2025-2026/233781"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Chamarajanagar(DEPUTY COMMISSIONER CHAMARAJNAGAR_IDA)",
+            "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+            "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+            "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+            "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "SUNIL BOSE",
+            "ATUL GARG",
+            "ATUL GARG",
+            "ATUL GARG",
+            "ATUL GARG"
+          ]
+        },
+        "Constituency": {
+          "name": "Constituency",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "CHAMARAJANAGAR(SC)",
+            "GHAZIABAD",
+            "GHAZIABAD",
+            "GHAZIABAD",
+            "GHAZIABAD"
+          ]
+        },
+        "Expenditure Date": {
+          "name": "Expenditure Date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "20-Aug-2026",
+            "04-Aug-2026",
+            "21-Aug-2026",
+            "02-Jul-2026",
+            "04-Aug-2026"
+          ]
+        },
+        "Vendor Name": {
+          "name": "Vendor Name",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "KRIDL BHUSIRI ACCOUNT WORKS",
+            "DARSH BUILDCON",
+            "DARSH BUILDCON",
+            "DARSH BUILDCON",
+            "DARSH BUILDCON"
+          ],
+          "numeric_stats": {
+            "count": 3,
+            "min": 103001384008.0,
+            "max": 803105000071.0,
+            "avg": 569737128050.0,
+            "total": 1709211384150.0
+          }
+        },
+        "Payment Status": {
+          "name": "Payment Status",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Payment In-Progress",
+            "Payment In-Progress",
+            "Payment In-Progress",
+            "Payment In-Progress",
+            "Payment In-Progress"
+          ]
+        },
+        "Fund Disbursed Amount ( ₹ )": {
+          "name": "Fund Disbursed Amount ( ₹ )",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "250000",
+            "832080",
+            "799146",
+            "997763",
+            "498309"
+          ],
+          "numeric_stats": {
+            "count": 81695,
+            "min": 1.0,
+            "max": 27004697442.45,
+            "avg": 661110.16,
+            "total": 54009394884.9
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "State": "Karnataka",
+          "Work": "Construction of footpaths and pedestrian ways",
+          "Work ID": "WS/MP18080/2025-2026/181962",
+          "IDA": "Chamarajanagar(DEPUTY COMMISSIONER CHAMARAJNAGAR_IDA)",
+          "Hon'ble Members of Parliament": "SUNIL BOSE",
+          "Constituency": "CHAMARAJANAGAR(SC)",
+          "Expenditure Date": "20-Aug-2026",
+          "Vendor Name": "KRIDL BHUSIRI ACCOUNT WORKS",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "250000"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "State": "Uttar Pradesh",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP18218/2025-2026/233878",
+          "IDA": "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+          "Hon'ble Members of Parliament": "ATUL GARG",
+          "Constituency": "GHAZIABAD",
+          "Expenditure Date": "04-Aug-2026",
+          "Vendor Name": "DARSH BUILDCON",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "832080"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "State": "Uttar Pradesh",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP18218/2025-2026/233777",
+          "IDA": "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+          "Hon'ble Members of Parliament": "ATUL GARG",
+          "Constituency": "GHAZIABAD",
+          "Expenditure Date": "21-Aug-2026",
+          "Vendor Name": "DARSH BUILDCON",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "799146"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "State": "Uttar Pradesh",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP18218/2025-2026/233875",
+          "IDA": "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+          "Hon'ble Members of Parliament": "ATUL GARG",
+          "Constituency": "GHAZIABAD",
+          "Expenditure Date": "02-Jul-2026",
+          "Vendor Name": "DARSH BUILDCON",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "997763"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "State": "Uttar Pradesh",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP18218/2025-2026/233781",
+          "IDA": "GHAZIABAD(DISTRICT MAGISTRAE GHAZIABAD_IDA)",
+          "Hon'ble Members of Parliament": "ATUL GARG",
+          "Constituency": "GHAZIABAD",
+          "Expenditure Date": "04-Aug-2026",
+          "Vendor Name": "DARSH BUILDCON",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "498309"
+        }
+      ]
+    },
+    "lok sabha :: Works Completed-Loksabha.csv": {
+      "house": "lok sabha",
+      "file_name": "Works Completed-Loksabha.csv",
+      "size_mb": 10.27,
+      "row_count": 33664,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Work Category",
+        "Work",
+        "State",
+        "IDA",
+        "Work Description",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Image",
+        "Completion Date",
+        "Amount Disbursed ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 33663,
+            "min": 1.0,
+            "max": 33663.0,
+            "avg": 16832.0,
+            "total": 566615616.0
+          }
+        },
+        "Work Category": {
+          "name": "Work Category",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others"
+          ]
+        },
+        "Work": {
+          "name": "Work",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "WS/MP418/2024-2025/133409-Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "WS/MP18152/2024-2025/133691-Construction of rooms and halls in school and colleges",
+            "WS/MP345/2024-2025/134140-Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "WS/MP18152/2024-2025/133686-Construction of rooms and halls in school and colleges",
+            "WS/MP18152/2024-2025/133690-Construction of rooms and halls in school and colleges"
+          ]
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Bihar",
+            "Punjab",
+            "Kerala",
+            "Punjab",
+            "Punjab"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "ARARIA(DISTRICT PLANNING OFFICER ARARIA_IDA)",
+            "FARIDKOT(DEPUTY COMMISSIONER FARIDKOT_IDA)",
+            "KOLLAM(DISTRICT COLLECTOR KOLLAM_IDA)",
+            "FARIDKOT(DEPUTY COMMISSIONER FARIDKOT_IDA)",
+            "FARIDKOT(DEPUTY COMMISSIONER FARIDKOT_IDA)"
+          ]
+        },
+        "Work Description": {
+          "name": "Work Description",
+          "null_count": 80,
+          "null_percentage": 0.24,
+          "samples": [
+            "PCC Road from Permeshwar Bhagat house to Ramdev Master house at ward no 15, uder Forbesganj Block.",
+            "Construction of MID DAY Meal Shed in Govt Primary school Bajakhana (Bus adda)",
+            "Concreting of road from Janathavayanasala -  Panthaplavil, ward no.6  Thrikkaruva GP, in  Kollam Constituency",
+            "Construction of MID DAY Meal Shed in Govt Primary school bajakhana main",
+            "Construction of MID DAY Meal Shed in Govt Primary school Dal Singh Wala"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Pradeep Kumar Singh",
+            "SARABJEET SINGH KHALSA",
+            "Shri NK Premachandran",
+            "SARABJEET SINGH KHALSA",
+            "SARABJEET SINGH KHALSA"
+          ]
+        },
+        "Constituency": {
+          "name": "Constituency",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "ARARIA",
+            "FARIDKOT(SC)",
+            "KOLLAM",
+            "FARIDKOT(SC)",
+            "FARIDKOT(SC)"
+          ]
+        },
+        "Image": {
+          "name": "Image",
+          "null_count": 9304,
+          "null_percentage": 27.64,
+          "samples": [
+            "Images",
+            "Images",
+            "Images",
+            "Images",
+            "Images"
+          ]
+        },
+        "Completion Date": {
+          "name": "Completion Date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "05-Sep-2024",
+            "07-Apr-2025",
+            "12-Aug-2024",
+            "07-Apr-2025",
+            "07-Apr-2025"
+          ]
+        },
+        "Amount Disbursed ( ₹ )": {
+          "name": "Amount Disbursed ( ₹ )",
+          "null_count": 92,
+          "null_percentage": 0.27,
+          "samples": [
+            "448127",
+            "300000",
+            "293492",
+            "300000",
+            "300000"
+          ],
+          "numeric_stats": {
+            "count": 33572,
+            "min": 8448.0,
+            "max": 16162053825.4,
+            "avg": 962829.37,
+            "total": 32324107650.8
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP418/2024-2025/133409-Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "State": "Bihar",
+          "IDA": "ARARIA(DISTRICT PLANNING OFFICER ARARIA_IDA)",
+          "Work Description": "PCC Road from Permeshwar Bhagat house to Ramdev Master house at ward no 15, uder Forbesganj Block.",
+          "Hon'ble Members of Parliament": "Pradeep Kumar Singh",
+          "Constituency": "ARARIA",
+          "Image": "N/A",
+          "Completion Date": "05-Sep-2024",
+          "Amount Disbursed ( ₹ )": "448127"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP18152/2024-2025/133691-Construction of rooms and halls in school and colleges",
+          "State": "Punjab",
+          "IDA": "FARIDKOT(DEPUTY COMMISSIONER FARIDKOT_IDA)",
+          "Work Description": "Construction of MID DAY Meal Shed in Govt Primary school Bajakhana (Bus adda)",
+          "Hon'ble Members of Parliament": "SARABJEET SINGH KHALSA",
+          "Constituency": "FARIDKOT(SC)",
+          "Image": "N/A",
+          "Completion Date": "07-Apr-2025",
+          "Amount Disbursed ( ₹ )": "300000"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP345/2024-2025/134140-Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "State": "Kerala",
+          "IDA": "KOLLAM(DISTRICT COLLECTOR KOLLAM_IDA)",
+          "Work Description": "Concreting of road from Janathavayanasala -  Panthaplavil, ward no.6  Thrikkaruva GP, in  Kollam Constituency",
+          "Hon'ble Members of Parliament": "Shri NK Premachandran",
+          "Constituency": "KOLLAM",
+          "Image": "N/A",
+          "Completion Date": "12-Aug-2024",
+          "Amount Disbursed ( ₹ )": "293492"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP18152/2024-2025/133686-Construction of rooms and halls in school and colleges",
+          "State": "Punjab",
+          "IDA": "FARIDKOT(DEPUTY COMMISSIONER FARIDKOT_IDA)",
+          "Work Description": "Construction of MID DAY Meal Shed in Govt Primary school bajakhana main",
+          "Hon'ble Members of Parliament": "SARABJEET SINGH KHALSA",
+          "Constituency": "FARIDKOT(SC)",
+          "Image": "N/A",
+          "Completion Date": "07-Apr-2025",
+          "Amount Disbursed ( ₹ )": "300000"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP18152/2024-2025/133690-Construction of rooms and halls in school and colleges",
+          "State": "Punjab",
+          "IDA": "FARIDKOT(DEPUTY COMMISSIONER FARIDKOT_IDA)",
+          "Work Description": "Construction of MID DAY Meal Shed in Govt Primary school Dal Singh Wala",
+          "Hon'ble Members of Parliament": "SARABJEET SINGH KHALSA",
+          "Constituency": "FARIDKOT(SC)",
+          "Image": "N/A",
+          "Completion Date": "07-Apr-2025",
+          "Amount Disbursed ( ₹ )": "300000"
+        }
+      ]
+    },
+    "lok sabha :: Works Recommended-Loksabha.csv": {
+      "house": "lok sabha",
+      "file_name": "Works Recommended-Loksabha.csv",
+      "size_mb": 31.36,
+      "row_count": 102327,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Work category",
+        "WORK",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Work description",
+        "Recommended date",
+        "RECOMMENDED AMOUNT   ( ₹ )",
+        "Sanction Date"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 102326,
+            "min": 1.0,
+            "max": 102326.0,
+            "avg": 51163.5,
+            "total": 5235356301.0
+          }
+        },
+        "Work category": {
+          "name": "Work category",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Normal/Others",
+            "Trust and Society",
+            "Trust and Society",
+            "Normal/Others",
+            "Normal/Others"
+          ]
+        },
+        "WORK": {
+          "name": "WORK",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "WS/\t MP620/2024-2025/133166-Construction of buildings for community cultural activities",
+            "WS/\t MP620/2025-2026/133167-Construction of rooms and halls in school and colleges",
+            "WS/\t MP620/2024-2025/133190-Construction of buildings for community cultural activities",
+            "WS/\t MP620/2025-2026/133191-Construction of buildings for community cultural activities",
+            "WS/\t MP620/2024-2025/133301-Construction of buildings for community cultural activities"
+          ]
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Karnataka",
+            "Karnataka",
+            "Karnataka",
+            "Karnataka",
+            "Karnataka"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+            "HAVERI(DEPUTY COMMISSIONER HAVERI_IDA)",
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi"
+          ]
+        },
+        "Constituency": {
+          "name": "Constituency",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "DHARWAD",
+            "DHARWAD",
+            "DHARWAD",
+            "DHARWAD",
+            "DHARWAD"
+          ]
+        },
+        "Work description": {
+          "name": "Work description",
+          "null_count": 114,
+          "null_percentage": 0.11,
+          "samples": [
+            "Construction of Community Bhavan at Navalgund TQ Belavatagi Village Pry No 1/A Near Shivanand Math Continue Work",
+            "Construction of College room of  CBS Charitable Foudation at Nulvi Vilage Pry No 817/3 Continued work",
+            "Construction of Community Bhavan of Veerashaiv Jangam Society (R) at Ward No 21 Chidamarnagar Dharwad",
+            "Construction of Maremma Cultural bhavan at Neerlgudda village Shiggava TQ",
+            "Construction of Cultural Bhavan at Kundagol TQ, Chickgungal Village ST Colony, Pry No.202"
+          ]
+        },
+        "Recommended date": {
+          "name": "Recommended date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "08-Jul-2024",
+            "08-Jul-2024",
+            "08-Jul-2024",
+            "08-Jul-2024",
+            "09-Jul-2024"
+          ]
+        },
+        "RECOMMENDED AMOUNT   ( ₹ )": {
+          "name": "RECOMMENDED AMOUNT   ( ₹ )",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "497185",
+            "500000",
+            "450000",
+            "1500000",
+            "398009"
+          ],
+          "numeric_stats": {
+            "count": 102326,
+            "min": 1.0,
+            "max": 99965000.0,
+            "avg": 546821.03,
+            "total": 55954008269.27
+          }
+        },
+        "Sanction Date": {
+          "name": "Sanction Date",
+          "null_count": 25213,
+          "null_percentage": 24.64,
+          "samples": [
+            "09-Jul-2024",
+            "18-Sep-2025",
+            "23-Sep-2024",
+            "29-May-2025",
+            "22-Aug-2024"
+          ],
+          "numeric_stats": {
+            "count": 1,
+            "min": 55954008269.27,
+            "max": 55954008269.27,
+            "avg": 55954008269.27,
+            "total": 55954008269.27
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Work category": "Normal/Others",
+          "WORK": "WS/\t MP620/2024-2025/133166-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Community Bhavan at Navalgund TQ Belavatagi Village Pry No 1/A Near Shivanand Math Continue Work",
+          "Recommended date": "08-Jul-2024",
+          "RECOMMENDED AMOUNT   ( ₹ )": "497185",
+          "Sanction Date": "09-Jul-2024"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Work category": "Trust and Society",
+          "WORK": "WS/\t MP620/2025-2026/133167-Construction of rooms and halls in school and colleges",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of College room of  CBS Charitable Foudation at Nulvi Vilage Pry No 817/3 Continued work",
+          "Recommended date": "08-Jul-2024",
+          "RECOMMENDED AMOUNT   ( ₹ )": "500000",
+          "Sanction Date": "18-Sep-2025"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Work category": "Trust and Society",
+          "WORK": "WS/\t MP620/2024-2025/133190-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Community Bhavan of Veerashaiv Jangam Society (R) at Ward No 21 Chidamarnagar Dharwad",
+          "Recommended date": "08-Jul-2024",
+          "RECOMMENDED AMOUNT   ( ₹ )": "450000",
+          "Sanction Date": "23-Sep-2024"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Work category": "Normal/Others",
+          "WORK": "WS/\t MP620/2025-2026/133191-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "HAVERI(DEPUTY COMMISSIONER HAVERI_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Maremma Cultural bhavan at Neerlgudda village Shiggava TQ",
+          "Recommended date": "08-Jul-2024",
+          "RECOMMENDED AMOUNT   ( ₹ )": "1500000",
+          "Sanction Date": "29-May-2025"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Work category": "Normal/Others",
+          "WORK": "WS/\t MP620/2024-2025/133301-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Cultural Bhavan at Kundagol TQ, Chickgungal Village ST Colony, Pry No.202",
+          "Recommended date": "09-Jul-2024",
+          "RECOMMENDED AMOUNT   ( ₹ )": "398009",
+          "Sanction Date": "22-Aug-2024"
+        }
+      ]
+    },
+    "lok sabha :: Works Sanctioned-Loksabha.csv": {
+      "house": "lok sabha",
+      "file_name": "Works Sanctioned-Loksabha.csv",
+      "size_mb": 25.76,
+      "row_count": 77470,
+      "column_count": 12,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Work category",
+        "Work",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Work description",
+        "Recommended date",
+        "Sanction Date",
+        "Sanction Amount ( ₹ )",
+        "Work Status"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 77469,
+            "min": 1.0,
+            "max": 77469.0,
+            "avg": 38735.0,
+            "total": 3000761715.0
+          }
+        },
+        "Work category": {
+          "name": "Work category",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Normal/Others",
+            "Trust and Society",
+            "Trust and Society",
+            "Normal/Others",
+            "Normal/Others"
+          ]
+        },
+        "Work": {
+          "name": "Work",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "WS/\t MP620/2024-2025/133166-Construction of buildings for community cultural activities",
+            "WS/\t MP620/2025-2026/133167-Construction of rooms and halls in school and colleges",
+            "WS/\t MP620/2024-2025/133190-Construction of buildings for community cultural activities",
+            "WS/\t MP620/2025-2026/133191-Construction of buildings for community cultural activities",
+            "WS/\t MP620/2024-2025/133301-Construction of buildings for community cultural activities"
+          ]
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Karnataka",
+            "Karnataka",
+            "Karnataka",
+            "Karnataka",
+            "Karnataka"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+            "HAVERI(DEPUTY COMMISSIONER HAVERI_IDA)",
+            "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi",
+            "Pralhad Venkatesh Joshi"
+          ]
+        },
+        "Constituency": {
+          "name": "Constituency",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "DHARWAD",
+            "DHARWAD",
+            "DHARWAD",
+            "DHARWAD",
+            "DHARWAD"
+          ]
+        },
+        "Work description": {
+          "name": "Work description",
+          "null_count": 97,
+          "null_percentage": 0.13,
+          "samples": [
+            "Construction of Community Bhavan at Navalgund TQ Belavatagi Village Pry No 1/A Near Shivanand Math Continue Work",
+            "Construction of College room of  CBS Charitable Foudation at Nulvi Vilage Pry No 817/3 Continued work",
+            "Construction of Community Bhavan of Veerashaiv Jangam Society (R) at Ward No 21 Chidamarnagar Dharwad",
+            "Construction of Maremma Cultural bhavan at Neerlgudda village Shiggava TQ",
+            "Construction of Cultural Bhavan at Kundagol TQ, Chickgungal Village ST Colony, Pry No.202"
+          ]
+        },
+        "Recommended date": {
+          "name": "Recommended date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "08-Jul-2024",
+            "08-Jul-2024",
+            "08-Jul-2024",
+            "08-Jul-2024",
+            "09-Jul-2024"
+          ]
+        },
+        "Sanction Date": {
+          "name": "Sanction Date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "09-Jul-2024",
+            "18-Sep-2025",
+            "23-Sep-2024",
+            "29-May-2025",
+            "22-Aug-2024"
+          ]
+        },
+        "Sanction Amount ( ₹ )": {
+          "name": "Sanction Amount ( ₹ )",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "497185",
+            "500000",
+            "450000",
+            "1500000",
+            "398009"
+          ],
+          "numeric_stats": {
+            "count": 77469,
+            "min": 2.46,
+            "max": 49740000.0,
+            "avg": 525687.23,
+            "total": 40724463767.08
+          }
+        },
+        "Work Status": {
+          "name": "Work Status",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "Physical Inspection",
+            "Sanction",
+            "Sanction",
+            "Work partially Completed",
+            "Physical Inspection"
+          ],
+          "numeric_stats": {
+            "count": 1,
+            "min": 40724463767.08,
+            "max": 40724463767.08,
+            "avg": 40724463767.08,
+            "total": 40724463767.08
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Work category": "Normal/Others",
+          "Work": "WS/\t MP620/2024-2025/133166-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Community Bhavan at Navalgund TQ Belavatagi Village Pry No 1/A Near Shivanand Math Continue Work",
+          "Recommended date": "08-Jul-2024",
+          "Sanction Date": "09-Jul-2024",
+          "Sanction Amount ( ₹ )": "497185",
+          "Work Status": "Physical Inspection"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Work category": "Trust and Society",
+          "Work": "WS/\t MP620/2025-2026/133167-Construction of rooms and halls in school and colleges",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of College room of  CBS Charitable Foudation at Nulvi Vilage Pry No 817/3 Continued work",
+          "Recommended date": "08-Jul-2024",
+          "Sanction Date": "18-Sep-2025",
+          "Sanction Amount ( ₹ )": "500000",
+          "Work Status": "Sanction"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Work category": "Trust and Society",
+          "Work": "WS/\t MP620/2024-2025/133190-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Community Bhavan of Veerashaiv Jangam Society (R) at Ward No 21 Chidamarnagar Dharwad",
+          "Recommended date": "08-Jul-2024",
+          "Sanction Date": "23-Sep-2024",
+          "Sanction Amount ( ₹ )": "450000",
+          "Work Status": "Sanction"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Work category": "Normal/Others",
+          "Work": "WS/\t MP620/2025-2026/133191-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "HAVERI(DEPUTY COMMISSIONER HAVERI_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Maremma Cultural bhavan at Neerlgudda village Shiggava TQ",
+          "Recommended date": "08-Jul-2024",
+          "Sanction Date": "29-May-2025",
+          "Sanction Amount ( ₹ )": "1500000",
+          "Work Status": "Work partially Completed"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Work category": "Normal/Others",
+          "Work": "WS/\t MP620/2024-2025/133301-Construction of buildings for community cultural activities",
+          "State": "Karnataka",
+          "IDA": "DHARWAD(DEPUTY COMMISSIONER DHARWAR_IDA)",
+          "Hon'ble Members of Parliament": "Pralhad Venkatesh Joshi",
+          "Constituency": "DHARWAD",
+          "Work description": "Construction of Cultural Bhavan at Kundagol TQ, Chickgungal Village ST Colony, Pry No.202",
+          "Recommended date": "09-Jul-2024",
+          "Sanction Date": "22-Aug-2024",
+          "Sanction Amount ( ₹ )": "398009",
+          "Work Status": "Physical Inspection"
+        }
+      ]
+    },
+    "rajya sabha :: Allocated Limit for Honble MPs-Rajyasabha.csv": {
+      "house": "rajya sabha",
+      "file_name": "Allocated Limit for Honble MPs-Rajyasabha.csv",
+      "size_mb": 0.02,
+      "row_count": 222,
+      "column_count": 5,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "State",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Allocated AMOUNT ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 221,
+            "min": 1.0,
+            "max": 221.0,
+            "avg": 111.0,
+            "total": 24531.0
+          }
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.45,
+          "samples": [
+            "Telangana",
+            "Maharashtra",
+            "Rajasthan",
+            "Maharashtra",
+            "Punjab"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.45,
+          "samples": [
+            "Dr. Abhishek Manu Singhvi (2026-32) (2026-2032)",
+            "Dr. Ajeet Madhavrao Gopchade (2024-30) (2024-2030)",
+            "Dr. Alka Singh (2026-32) (2026-2032)",
+            "Dr. Anil Sukhdeorao Bonde (2022-28) (2022-2028)",
+            "Dr. Ashok Kumar Mittal (2022-28) (2022-2028)"
+          ]
+        },
+        "Elected/Nominated": {
+          "name": "Elected/Nominated",
+          "null_count": 1,
+          "null_percentage": 0.45,
+          "samples": [
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP"
+          ]
+        },
+        "Allocated AMOUNT ( ₹ )": {
+          "name": "Allocated AMOUNT ( ₹ )",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "49000000",
+            "147000000",
+            "49000000",
+            "196063957.11",
+            "222487632.14"
+          ],
+          "numeric_stats": {
+            "count": 222,
+            "min": 24500000.0,
+            "max": 33148483915.82,
+            "avg": 298634990.23,
+            "total": 66296967831.64
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "State": "Telangana",
+          "Hon'ble Members of Parliament": "Dr. Abhishek Manu Singhvi (2026-32) (2026-2032)",
+          "Elected/Nominated": "Elected MP",
+          "Allocated AMOUNT ( ₹ )": "49000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "State": "Maharashtra",
+          "Hon'ble Members of Parliament": "Dr. Ajeet Madhavrao Gopchade (2024-30) (2024-2030)",
+          "Elected/Nominated": "Elected MP",
+          "Allocated AMOUNT ( ₹ )": "147000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "State": "Rajasthan",
+          "Hon'ble Members of Parliament": "Dr. Alka Singh (2026-32) (2026-2032)",
+          "Elected/Nominated": "Elected MP",
+          "Allocated AMOUNT ( ₹ )": "49000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "State": "Maharashtra",
+          "Hon'ble Members of Parliament": "Dr. Anil Sukhdeorao Bonde (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Allocated AMOUNT ( ₹ )": "196063957.11"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "State": "Punjab",
+          "Hon'ble Members of Parliament": "Dr. Ashok Kumar Mittal (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Allocated AMOUNT ( ₹ )": "222487632.14"
+        }
+      ]
+    },
+    "rajya sabha :: Amount consented for Calamity-Rajyasabha.csv": {
+      "house": "rajya sabha",
+      "file_name": "Amount consented for Calamity-Rajyasabha.csv",
+      "size_mb": 0.0,
+      "row_count": 21,
+      "column_count": 6,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Calamity Type",
+        "Calamity Name",
+        "Hon'ble Members of Parliament",
+        "Date of Consent",
+        "Consent Amount ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 20,
+            "min": 1.0,
+            "max": 20.0,
+            "avg": 10.5,
+            "total": 210.0
+          }
+        },
+        "Calamity Type": {
+          "name": "Calamity Type",
+          "null_count": 1,
+          "null_percentage": 4.76,
+          "samples": [
+            "National Calamity",
+            "National Calamity",
+            "National Calamity",
+            "National Calamity",
+            "National Calamity"
+          ]
+        },
+        "Calamity Name": {
+          "name": "Calamity Name",
+          "null_count": 1,
+          "null_percentage": 4.76,
+          "samples": [
+            "Flood 2025 in Punjab",
+            "Flood 2025 in Punjab",
+            "Flood 2025 in Punjab",
+            "Flood 2025 in Punjab",
+            "Flood 2025 in Punjab"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 4.76,
+          "samples": [
+            "Shri Hardeep Singh Puri (2020-26) (2020-2026)",
+            "Dr. Ashok Kumar Mittal (2022-28) (2022-2028)",
+            "Shri Narain Dass Gupta (2024-30) (2024-2030)",
+            "Shri Sanjay Singh (2024-30) (2024-2030)",
+            "Shri Harbhajan Singh (2022-28) (2022-2028)"
+          ]
+        },
+        "Date of Consent": {
+          "name": "Date of Consent",
+          "null_count": 1,
+          "null_percentage": 4.76,
+          "samples": [
+            "17-Nov-2025",
+            "04-Nov-2025",
+            "03-Nov-2025",
+            "03-Nov-2025",
+            "03-Nov-2025"
+          ]
+        },
+        "Consent Amount ( ₹ )": {
+          "name": "Consent Amount ( ₹ )",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "10000000",
+            "10000000",
+            "7500000",
+            "10000000",
+            "10000000"
+          ],
+          "numeric_stats": {
+            "count": 21,
+            "min": 500000.0,
+            "max": 104500000.0,
+            "avg": 9952380.95,
+            "total": 209000000.0
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Shri Hardeep Singh Puri (2020-26) (2020-2026)",
+          "Date of Consent": "17-Nov-2025",
+          "Consent Amount ( ₹ )": "10000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Dr. Ashok Kumar Mittal (2022-28) (2022-2028)",
+          "Date of Consent": "04-Nov-2025",
+          "Consent Amount ( ₹ )": "10000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Shri Narain Dass Gupta (2024-30) (2024-2030)",
+          "Date of Consent": "03-Nov-2025",
+          "Consent Amount ( ₹ )": "7500000"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Shri Sanjay Singh (2024-30) (2024-2030)",
+          "Date of Consent": "03-Nov-2025",
+          "Consent Amount ( ₹ )": "10000000"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Calamity Type": "National Calamity",
+          "Calamity Name": "Flood 2025 in Punjab",
+          "Hon'ble Members of Parliament": "Shri Harbhajan Singh (2022-28) (2022-2028)",
+          "Date of Consent": "03-Nov-2025",
+          "Consent Amount ( ₹ )": "10000000"
+        }
+      ]
+    },
+    "rajya sabha :: Expenditure on Completed and On-going Works as on Date-Rajyasabha.csv": {
+      "house": "rajya sabha",
+      "file_name": "Expenditure on Completed and On-going Works as on Date-Rajyasabha.csv",
+      "size_mb": 6.63,
+      "row_count": 24749,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "work_id_col": "Work ID",
+      "unique_work_ids": 15110,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "State",
+        "Work",
+        "Work ID",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Expenditure Date",
+        "Vendor Name",
+        "Payment Status",
+        "Fund Disbursed Amount ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 24748,
+            "min": 1.0,
+            "max": 24748.0,
+            "avg": 12374.5,
+            "total": 306244126.0
+          }
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Uttar Pradesh",
+            "Chhattisgarh",
+            "Bihar",
+            "Bihar",
+            "Bihar"
+          ]
+        },
+        "Work": {
+          "name": "Work",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Purchase of ambulances (Four, three and two wheelers)",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "Construction of roads, link roads, pathways or any other road with or without drainage system"
+          ]
+        },
+        "Work ID": {
+          "name": "Work ID",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "WS/MP887/2025-2026/207251",
+            "WS/MP176/2025-2026/243305",
+            "WS/MP041/2026-2027/282272",
+            "WS/MP041/2026-2027/282283",
+            "WS/MP18332/2026-2027/283419"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "LUCKNOW(DISTRICT MAGISTRAE LUCKNOW_IDA)",
+            "DURG(DISTRICT COLLECTOR DURG_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Dr. Dinesh Sharma (2023-26) (2023-2026)",
+            "Shri Rajeev Shukla (2022-28) (2022-2028)",
+            "Dr. Faiyaz Ahmad (2022-28) (2022-2028)",
+            "Dr. Faiyaz Ahmad (2022-28) (2022-2028)",
+            "Dr. Dharmshila Gupta (2024-30) (2024-2030)"
+          ]
+        },
+        "Elected/Nominated": {
+          "name": "Elected/Nominated",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP"
+          ]
+        },
+        "Expenditure Date": {
+          "name": "Expenditure Date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "20-Aug-2026",
+            "14-Aug-2026",
+            "18-Aug-2026",
+            "18-Aug-2026",
+            "20-Aug-2026"
+          ]
+        },
+        "Vendor Name": {
+          "name": "Vendor Name",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "FORCE MOTORS LIMITED",
+            "SARPANCH GRAM PANCHYAT Manikchauri",
+            "ASSISTANT ENGINEER PATNA SAHIB",
+            "ASSISTANT ENGINEER PATNA SAHIB",
+            "ASSISTANT ENGINEER PATNA SAHIB"
+          ],
+          "numeric_stats": {
+            "count": 1,
+            "min": 182053000017269.0,
+            "max": 182053000017269.0,
+            "avg": 182053000017269.0,
+            "total": 182053000017269.0
+          }
+        },
+        "Payment Status": {
+          "name": "Payment Status",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Payment In-Progress",
+            "Payment In-Progress",
+            "Payment In-Progress",
+            "Payment In-Progress",
+            "Payment In-Progress"
+          ]
+        },
+        "Fund Disbursed Amount ( ₹ )": {
+          "name": "Fund Disbursed Amount ( ₹ )",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "4282950",
+            "259974",
+            "1492200",
+            "1485600",
+            "959600"
+          ],
+          "numeric_stats": {
+            "count": 24749,
+            "min": 0.01,
+            "max": 12236001480.69,
+            "avg": 988807.75,
+            "total": 24472002961.38
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "State": "Uttar Pradesh",
+          "Work": "Purchase of ambulances (Four, three and two wheelers)",
+          "Work ID": "WS/MP887/2025-2026/207251",
+          "IDA": "LUCKNOW(DISTRICT MAGISTRAE LUCKNOW_IDA)",
+          "Hon'ble Members of Parliament": "Dr. Dinesh Sharma (2023-26) (2023-2026)",
+          "Elected/Nominated": "Elected MP",
+          "Expenditure Date": "20-Aug-2026",
+          "Vendor Name": "FORCE MOTORS LIMITED",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "4282950"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "State": "Chhattisgarh",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP176/2025-2026/243305",
+          "IDA": "DURG(DISTRICT COLLECTOR DURG_IDA)",
+          "Hon'ble Members of Parliament": "Shri Rajeev Shukla (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Expenditure Date": "14-Aug-2026",
+          "Vendor Name": "SARPANCH GRAM PANCHYAT Manikchauri",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "259974"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "State": "Bihar",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP041/2026-2027/282272",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Dr. Faiyaz Ahmad (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Expenditure Date": "18-Aug-2026",
+          "Vendor Name": "ASSISTANT ENGINEER PATNA SAHIB",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "1492200"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "State": "Bihar",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP041/2026-2027/282283",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Dr. Faiyaz Ahmad (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Expenditure Date": "18-Aug-2026",
+          "Vendor Name": "ASSISTANT ENGINEER PATNA SAHIB",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "1485600"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "State": "Bihar",
+          "Work": "Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "Work ID": "WS/MP18332/2026-2027/283419",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Dr. Dharmshila Gupta (2024-30) (2024-2030)",
+          "Elected/Nominated": "Elected MP",
+          "Expenditure Date": "20-Aug-2026",
+          "Vendor Name": "ASSISTANT ENGINEER PATNA SAHIB",
+          "Payment Status": "Payment In-Progress",
+          "Fund Disbursed Amount ( ₹ )": "959600"
+        }
+      ]
+    },
+    "rajya sabha :: Works Completed-Rajyasabha.csv": {
+      "house": "rajya sabha",
+      "file_name": "Works Completed-Rajyasabha.csv",
+      "size_mb": 3.35,
+      "row_count": 9831,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Work Category",
+        "Work",
+        "State",
+        "IDA",
+        "Work Description",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Image",
+        "Completion Date",
+        "Amount Disbursed ( ₹ )"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 9830,
+            "min": 1.0,
+            "max": 9830.0,
+            "avg": 4915.5,
+            "total": 48319365.0
+          }
+        },
+        "Work Category": {
+          "name": "Work Category",
+          "null_count": 6,
+          "null_percentage": 0.06,
+          "samples": [
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others"
+          ]
+        },
+        "Work": {
+          "name": "Work",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "WS/MP187/2023-2024/1362-Street lights",
+            "WS/MP187/2023-2024/1363-Street lights",
+            "WS/MP187/2023-2024/1364-Street lights",
+            "WS/MP187/2023-2024/1365-Street lights",
+            "WS/MP187/2023-2024/1367-Street lights"
+          ]
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+            "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+            "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+            "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+            "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)"
+          ]
+        },
+        "Work Description": {
+          "name": "Work Description",
+          "null_count": 7,
+          "null_percentage": 0.07,
+          "samples": [
+            "High Mask LED Light ( 6 lights)",
+            "High Mask Street Light ( 6 lights)",
+            "High Mask Street Lights ( 6 Lights)",
+            "High Mask Street Light ( 6 Lights)",
+            "High Mask Street Light"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+            "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+            "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+            "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+            "Shri Javed Ali Khan (2022-28) (NaN-NaN)"
+          ]
+        },
+        "Elected/Nominated": {
+          "name": "Elected/Nominated",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP"
+          ]
+        },
+        "Image": {
+          "name": "Image",
+          "null_count": 3459,
+          "null_percentage": 35.18,
+          "samples": [
+            "Images",
+            "Images",
+            "Images",
+            "Images",
+            "Images"
+          ]
+        },
+        "Completion Date": {
+          "name": "Completion Date",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "02-Aug-2023",
+            "22-Feb-2024",
+            "22-Feb-2024",
+            "22-Feb-2024",
+            "26-Feb-2024"
+          ]
+        },
+        "Amount Disbursed ( ₹ )": {
+          "name": "Amount Disbursed ( ₹ )",
+          "null_count": 17,
+          "null_percentage": 0.17,
+          "samples": [
+            "283000",
+            "283000",
+            "283000",
+            "283000",
+            "283000"
+          ],
+          "numeric_stats": {
+            "count": 9814,
+            "min": 10000.0,
+            "max": 7513787061.21,
+            "avg": 1531238.45,
+            "total": 15027574122.42
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1362-Street lights",
+          "State": "Uttar Pradesh",
+          "IDA": "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+          "Work Description": "High Mask LED Light ( 6 lights)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+          "Elected/Nominated": "Elected MP",
+          "Image": "Images",
+          "Completion Date": "02-Aug-2023",
+          "Amount Disbursed ( ₹ )": "283000"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1363-Street lights",
+          "State": "Uttar Pradesh",
+          "IDA": "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+          "Work Description": "High Mask Street Light ( 6 lights)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+          "Elected/Nominated": "Elected MP",
+          "Image": "N/A",
+          "Completion Date": "22-Feb-2024",
+          "Amount Disbursed ( ₹ )": "283000"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1364-Street lights",
+          "State": "Uttar Pradesh",
+          "IDA": "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+          "Work Description": "High Mask Street Lights ( 6 Lights)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+          "Elected/Nominated": "Elected MP",
+          "Image": "N/A",
+          "Completion Date": "22-Feb-2024",
+          "Amount Disbursed ( ₹ )": "283000"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1365-Street lights",
+          "State": "Uttar Pradesh",
+          "IDA": "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+          "Work Description": "High Mask Street Light ( 6 Lights)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+          "Elected/Nominated": "Elected MP",
+          "Image": "N/A",
+          "Completion Date": "22-Feb-2024",
+          "Amount Disbursed ( ₹ )": "283000"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Work Category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1367-Street lights",
+          "State": "Uttar Pradesh",
+          "IDA": "PILIBHIT(DISTRICT MAGISTRAE PILIBHIT_IDA)",
+          "Work Description": "High Mask Street Light",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (NaN-NaN)",
+          "Elected/Nominated": "Elected MP",
+          "Image": "N/A",
+          "Completion Date": "26-Feb-2024",
+          "Amount Disbursed ( ₹ )": "283000"
+        }
+      ]
+    },
+    "rajya sabha :: Works Recommended-Rajyasabha.csv": {
+      "house": "rajya sabha",
+      "file_name": "Works Recommended-Rajyasabha.csv",
+      "size_mb": 8.45,
+      "row_count": 24526,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Work category",
+        "WORK",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Work description",
+        "Recommended date",
+        "RECOMMENDED AMOUNT   ( ₹ )",
+        "Sanction Date"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 24525,
+            "min": 1.0,
+            "max": 24525.0,
+            "avg": 12263.0,
+            "total": 300750075.0
+          }
+        },
+        "Work category": {
+          "name": "Work category",
+          "null_count": 6,
+          "null_percentage": 0.02,
+          "samples": [
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others"
+          ]
+        },
+        "WORK": {
+          "name": "WORK",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "WS/MP187/2023-2024/1199-Construction of rooms and halls in school and colleges",
+            "WS/MP187/2023-2024/1200-Construction of rooms and halls in school and colleges",
+            "WS/MP187/2023-2024/1211-Construction of rooms and halls in school and colleges",
+            "WS/MP001/2023-2024/1215-Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "WS/MP001/2023-2024/1216-Construction of roads, link roads, pathways or any other road with or without drainage system"
+          ]
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Bihar",
+            "Bihar"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+            "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+            "ETAWAH(DISTRICT MAGISTRATE ETAWAH_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Shri Javed Ali Khan (2022-28) (2022-2028)",
+            "Shri Javed Ali Khan (2022-28) (2022-2028)",
+            "Shri Javed Ali Khan (2022-28) (2022-2028)",
+            "Shri Shambhu Sharan Patel (2022-28) (2022-2028)",
+            "Shri Shambhu Sharan Patel (2022-28) (2022-2028)"
+          ]
+        },
+        "Elected/Nominated": {
+          "name": "Elected/Nominated",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP"
+          ]
+        },
+        "Work description": {
+          "name": "Work description",
+          "null_count": 23,
+          "null_percentage": 0.09,
+          "samples": [
+            "Construction of Class room Sompal Singh Memorial Public School",
+            "Construction of Class room and Hall Sainik Veer Abdul Hamid Uchhtar madhyamik Vidyalaya",
+            "Construction of Classroom and hall Galaxy Public School lakhna",
+            "P.C.C ??? ?? ???????",
+            "P.C.C ??? ?? ???????"
+          ]
+        },
+        "Recommended date": {
+          "name": "Recommended date",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "14-Jun-2023",
+            "14-Jun-2023",
+            "14-Jun-2023",
+            "14-Jun-2023",
+            "14-Jun-2023"
+          ]
+        },
+        "RECOMMENDED AMOUNT   ( ₹ )": {
+          "name": "RECOMMENDED AMOUNT   ( ₹ )",
+          "null_count": 1,
+          "null_percentage": 0.0,
+          "samples": [
+            "1000000",
+            "1000000",
+            "1000000",
+            "1484933",
+            "1486089"
+          ],
+          "numeric_stats": {
+            "count": 24525,
+            "min": 3.89,
+            "max": 73500000.0,
+            "avg": 887076.06,
+            "total": 21755540448.21
+          }
+        },
+        "Sanction Date": {
+          "name": "Sanction Date",
+          "null_count": 5676,
+          "null_percentage": 23.14,
+          "samples": [
+            "07-Nov-2023",
+            "08-Dec-2023",
+            "15-Mar-2024",
+            "12-Aug-2023",
+            "12-Aug-2023"
+          ],
+          "numeric_stats": {
+            "count": 1,
+            "min": 21755540448.21,
+            "max": 21755540448.21,
+            "avg": 21755540448.21,
+            "total": 21755540448.21
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Work category": "Normal/Others",
+          "WORK": "WS/MP187/2023-2024/1199-Construction of rooms and halls in school and colleges",
+          "State": "Uttar Pradesh",
+          "IDA": "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "Construction of Class room Sompal Singh Memorial Public School",
+          "Recommended date": "14-Jun-2023",
+          "RECOMMENDED AMOUNT   ( ₹ )": "1000000",
+          "Sanction Date": "07-Nov-2023"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Work category": "Normal/Others",
+          "WORK": "WS/MP187/2023-2024/1200-Construction of rooms and halls in school and colleges",
+          "State": "Uttar Pradesh",
+          "IDA": "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "Construction of Class room and Hall Sainik Veer Abdul Hamid Uchhtar madhyamik Vidyalaya",
+          "Recommended date": "14-Jun-2023",
+          "RECOMMENDED AMOUNT   ( ₹ )": "1000000",
+          "Sanction Date": "08-Dec-2023"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Work category": "Normal/Others",
+          "WORK": "WS/MP187/2023-2024/1211-Construction of rooms and halls in school and colleges",
+          "State": "Uttar Pradesh",
+          "IDA": "ETAWAH(DISTRICT MAGISTRATE ETAWAH_IDA)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "Construction of Classroom and hall Galaxy Public School lakhna",
+          "Recommended date": "14-Jun-2023",
+          "RECOMMENDED AMOUNT   ( ₹ )": "1000000",
+          "Sanction Date": "15-Mar-2024"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Work category": "Normal/Others",
+          "WORK": "WS/MP001/2023-2024/1215-Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "State": "Bihar",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Shri Shambhu Sharan Patel (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "P.C.C ??? ?? ???????",
+          "Recommended date": "14-Jun-2023",
+          "RECOMMENDED AMOUNT   ( ₹ )": "1484933",
+          "Sanction Date": "12-Aug-2023"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Work category": "Normal/Others",
+          "WORK": "WS/MP001/2023-2024/1216-Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "State": "Bihar",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Shri Shambhu Sharan Patel (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "P.C.C ??? ?? ???????",
+          "Recommended date": "14-Jun-2023",
+          "RECOMMENDED AMOUNT   ( ₹ )": "1486089",
+          "Sanction Date": "12-Aug-2023"
+        }
+      ]
+    },
+    "rajya sabha :: Works Sanctioned-Rajyasabha.csv": {
+      "house": "rajya sabha",
+      "file_name": "Works Sanctioned-Rajyasabha.csv",
+      "size_mb": 7.09,
+      "row_count": 19079,
+      "column_count": 12,
+      "exact_duplicate_rows": 0,
+      "work_id_col": null,
+      "unique_work_ids": 0,
+      "headers": [
+        "﻿\"Sr. No.\"",
+        "Work category",
+        "Work",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Work description",
+        "Recommended date",
+        "Sanction Date",
+        "Sanction Amount ( ₹ )",
+        "Work Status"
+      ],
+      "columns": {
+        "﻿\"Sr. No.\"": {
+          "name": "﻿\"Sr. No.\"",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "numeric_stats": {
+            "count": 19078,
+            "min": 1.0,
+            "max": 19078.0,
+            "avg": 9539.5,
+            "total": 181994581.0
+          }
+        },
+        "Work category": {
+          "name": "Work category",
+          "null_count": 8,
+          "null_percentage": 0.04,
+          "samples": [
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others",
+            "Normal/Others"
+          ]
+        },
+        "Work": {
+          "name": "Work",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "WS/MP187/2023-2024/1199-Construction of rooms and halls in school and colleges",
+            "WS/MP187/2023-2024/1200-Construction of rooms and halls in school and colleges",
+            "WS/MP187/2023-2024/1211-Construction of rooms and halls in school and colleges",
+            "WS/MP001/2023-2024/1215-Construction of roads, link roads, pathways or any other road with or without drainage system",
+            "WS/MP001/2023-2024/1216-Construction of roads, link roads, pathways or any other road with or without drainage system"
+          ]
+        },
+        "State": {
+          "name": "State",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Uttar Pradesh",
+            "Bihar",
+            "Bihar"
+          ]
+        },
+        "IDA": {
+          "name": "IDA",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+            "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+            "ETAWAH(DISTRICT MAGISTRATE ETAWAH_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+            "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)"
+          ]
+        },
+        "Hon'ble Members of Parliament": {
+          "name": "Hon'ble Members of Parliament",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "Shri Javed Ali Khan (2022-28) (2022-2028)",
+            "Shri Javed Ali Khan (2022-28) (2022-2028)",
+            "Shri Javed Ali Khan (2022-28) (2022-2028)",
+            "Shri Shambhu Sharan Patel (2022-28) (2022-2028)",
+            "Shri Shambhu Sharan Patel (2022-28) (2022-2028)"
+          ]
+        },
+        "Elected/Nominated": {
+          "name": "Elected/Nominated",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP",
+            "Elected MP"
+          ]
+        },
+        "Work description": {
+          "name": "Work description",
+          "null_count": 12,
+          "null_percentage": 0.06,
+          "samples": [
+            "Construction of Class room Sompal Singh Memorial Public School",
+            "Construction of Class room and Hall Sainik Veer Abdul Hamid Uchhtar madhyamik Vidyalaya",
+            "Construction of Classroom and hall Galaxy Public School lakhna",
+            "P.C.C ??? ?? ???????",
+            "P.C.C ??? ?? ???????"
+          ]
+        },
+        "Recommended date": {
+          "name": "Recommended date",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "14-Jun-2023",
+            "14-Jun-2023",
+            "14-Jun-2023",
+            "14-Jun-2023",
+            "14-Jun-2023"
+          ]
+        },
+        "Sanction Date": {
+          "name": "Sanction Date",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "07-Nov-2023",
+            "08-Dec-2023",
+            "15-Mar-2024",
+            "12-Aug-2023",
+            "12-Aug-2023"
+          ]
+        },
+        "Sanction Amount ( ₹ )": {
+          "name": "Sanction Amount ( ₹ )",
+          "null_count": 1,
+          "null_percentage": 0.01,
+          "samples": [
+            "1000000",
+            "1000000",
+            "1000000",
+            "1484933",
+            "1486089"
+          ],
+          "numeric_stats": {
+            "count": 19078,
+            "min": 10000.0,
+            "max": 73500000.0,
+            "avg": 879902.17,
+            "total": 16786773690.87
+          }
+        },
+        "Work Status": {
+          "name": "Work Status",
+          "null_count": 0,
+          "null_percentage": 0.0,
+          "samples": [
+            "Vendor Identification",
+            "Physical Inspection",
+            "Work Completed",
+            "Work Completed",
+            "Work Completed"
+          ],
+          "numeric_stats": {
+            "count": 1,
+            "min": 16786773690.87,
+            "max": 16786773690.87,
+            "avg": 16786773690.87,
+            "total": 16786773690.87
+          }
+        }
+      },
+      "sample_records": [
+        {
+          "﻿\"Sr. No.\"": "1",
+          "Work category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1199-Construction of rooms and halls in school and colleges",
+          "State": "Uttar Pradesh",
+          "IDA": "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "Construction of Class room Sompal Singh Memorial Public School",
+          "Recommended date": "14-Jun-2023",
+          "Sanction Date": "07-Nov-2023",
+          "Sanction Amount ( ₹ )": "1000000",
+          "Work Status": "Vendor Identification"
+        },
+        {
+          "﻿\"Sr. No.\"": "2",
+          "Work category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1200-Construction of rooms and halls in school and colleges",
+          "State": "Uttar Pradesh",
+          "IDA": "SAMBHAL(DISTRICT MAGISTRAE BHIMNAGAR SAMBHAL_IDA)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "Construction of Class room and Hall Sainik Veer Abdul Hamid Uchhtar madhyamik Vidyalaya",
+          "Recommended date": "14-Jun-2023",
+          "Sanction Date": "08-Dec-2023",
+          "Sanction Amount ( ₹ )": "1000000",
+          "Work Status": "Physical Inspection"
+        },
+        {
+          "﻿\"Sr. No.\"": "3",
+          "Work category": "Normal/Others",
+          "Work": "WS/MP187/2023-2024/1211-Construction of rooms and halls in school and colleges",
+          "State": "Uttar Pradesh",
+          "IDA": "ETAWAH(DISTRICT MAGISTRATE ETAWAH_IDA)",
+          "Hon'ble Members of Parliament": "Shri Javed Ali Khan (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "Construction of Classroom and hall Galaxy Public School lakhna",
+          "Recommended date": "14-Jun-2023",
+          "Sanction Date": "15-Mar-2024",
+          "Sanction Amount ( ₹ )": "1000000",
+          "Work Status": "Work Completed"
+        },
+        {
+          "﻿\"Sr. No.\"": "4",
+          "Work category": "Normal/Others",
+          "Work": "WS/MP001/2023-2024/1215-Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "State": "Bihar",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Shri Shambhu Sharan Patel (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "P.C.C ??? ?? ???????",
+          "Recommended date": "14-Jun-2023",
+          "Sanction Date": "12-Aug-2023",
+          "Sanction Amount ( ₹ )": "1484933",
+          "Work Status": "Work Completed"
+        },
+        {
+          "﻿\"Sr. No.\"": "5",
+          "Work category": "Normal/Others",
+          "Work": "WS/MP001/2023-2024/1216-Construction of roads, link roads, pathways or any other road with or without drainage system",
+          "State": "Bihar",
+          "IDA": "PATNA(DISTRICT PLANNING OFFICER PATNA_IDA)",
+          "Hon'ble Members of Parliament": "Shri Shambhu Sharan Patel (2022-28) (2022-2028)",
+          "Elected/Nominated": "Elected MP",
+          "Work description": "P.C.C ??? ?? ???????",
+          "Recommended date": "14-Jun-2023",
+          "Sanction Date": "12-Aug-2023",
+          "Sanction Amount ( ₹ )": "1486089",
+          "Work Status": "Work Completed"
+        }
+      ]
+    }
+  },
+  "cross_linkages": {
+    "lok sabha": {
+      "recommended_works_count": 0,
+      "sanctioned_works_count": 0,
+      "completed_works_count": 0,
+      "expenditure_works_count": 55105,
+      "sanc_in_rec": 0,
+      "sanc_in_rec_pct": 0,
+      "comp_in_sanc": 0,
+      "comp_in_sanc_pct": 0,
+      "exp_in_sanc": 0,
+      "exp_in_sanc_pct": 0.0
+    },
+    "rajya sabha": {
+      "recommended_works_count": 0,
+      "sanctioned_works_count": 0,
+      "completed_works_count": 0,
+      "expenditure_works_count": 15110,
+      "sanc_in_rec": 0,
+      "sanc_in_rec_pct": 0,
+      "comp_in_sanc": 0,
+      "comp_in_sanc_pct": 0,
+      "exp_in_sanc": 0,
+      "exp_in_sanc_pct": 0.0
+    }
+  },
+  "geographic_coverage": {},
+  "financial_summary": {},
+  "data_quality_issues": {},
+  "categorical_distributions": {},
+  "temporal_coverage": {}
+}

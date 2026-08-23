@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-bg: #F7F8F6;
+  --app-card: #FFFFFF;
+  --app-surface: #F0F2ED;
+  --app-border: #E5E7EB;
+
+  --navy-primary: #102A43;
+  --accent-blue: #1769E0;
+  --accent-teal: #147A73;
+  --success-green: #14804A;
+  --warning-amber: #C27A00;
+  --risk-high: #C2413B;
+  --risk-critical: #8F1D1D;
+
+  --text-main: #172033;
+  --text-muted: #667085;
+  --text-light: #98A2B3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* Institutional Card Shell */
+.gov-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.04);
+}
+
+.gov-card-hover {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gov-card-hover:hover {
+  border-color: #D1D5DB;
+  box-shadow: 0 4px 12px rgba(16, 42, 67, 0.07);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F2ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Subtle Page Transition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s ease-out forwards;
+}
