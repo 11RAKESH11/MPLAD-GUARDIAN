@@ -22,7 +22,7 @@ export const MpsAnalyticsPage: React.FC = () => {
     try {
       const res = await api.getMps({ q: search, house, page, limit: 20 });
       setMps(res.data);
-      setPagination(res.pagination);
+      setPagination(res.meta);
     } catch (err) {
       console.error('Failed to load MPs', err);
     } finally {

@@ -8,11 +8,11 @@ export const AuditLogsPage: React.FC = () => {
   const [logs, setLogs] = useState<AuditLogRecord[]>([]);
   const [pagination, setPagination] = useState<Pagination>({
     page: 1,
-    limit: 25,
-    total_records: 0,
+    page_size: 20,
+    total: 0,
     total_pages: 1,
     has_next: false,
-    has_prev: false,
+    has_prev: false
   });
   const [loading, setLoading] = useState(true);
   const [actionFilter, setActionFilter] = useState('');
@@ -28,8 +28,8 @@ export const AuditLogsPage: React.FC = () => {
     })
       .then((res) => {
         setLogs(res.logs || []);
-        if (res.pagination) {
-          setPagination(res.pagination);
+        if (res.meta) {
+          setPagination(res.meta);
         }
         setLoading(false);
       })
@@ -68,7 +68,7 @@ export const AuditLogsPage: React.FC = () => {
 
         <div className="flex items-center gap-2">
           <span className="px-3 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-mono text-slate-300">
-            {pagination.total_records} Verified Events
+            {pagination.total} Verified Events
           </span>
         </div>
       </div>

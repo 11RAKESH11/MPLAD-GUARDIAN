@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Query
 from backend.app.database import query_db
 import math
 
-router = APIRouter(prefix="/api/mps", tags=["Parliamentarian Intelligence Dossiers"])
+router = APIRouter(prefix="/api/v1/mps", tags=["Parliamentarian Intelligence Dossiers"])
 
 @router.get("")
 def list_mps(
@@ -60,10 +60,10 @@ def list_mps(
     
     return {
         "data": [dict(r) for r in rows],
-        "pagination": {
+        "meta": {
             "page": page,
-            "limit": limit,
-            "total_records": total_records,
+            "page_size": limit,
+            "total": total_records,
             "total_pages": total_pages,
             "has_next": page < total_pages,
             "has_prev": page > 1

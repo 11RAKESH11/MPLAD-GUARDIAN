@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, Depends, HTTPException
 from backend.app.database import query_db
+from backend.app.auth import require_role
 import math
 
-router = APIRouter(prefix="/api/audit-logs", tags=["System Audit Trail"])
+router = APIRouter(prefix="/api/v1/audit-logs", tags=["System Audit Trail & Governance Logs"])
 
 @router.get("")
 def list_audit_logs(
@@ -10,7 +11,8 @@ def list_audit_logs(
     username: str = Query("", description="Filter by username"),
     target_type: str = Query("", description="Filter by target type e.g. ALERT, PROJECT, SYSTEM"),
     page: int = Query(1, ge=1),
-    limit: int = Query(50, ge=5, le=200)
+    limit: int = Query(50, ge=5, le=200),
+    current_user: dict = Depends(require_role(["ADMIN"]))
 ):
     offset = (page - 1) * limit
     where_clauses = ["1=1"]
@@ -33,7 +35,8 @@ def list_audit_logs(
     total_count = query_db(f"SELECT COUNT(*) FROM audit_logs WHERE {where_sql}", params, one=True)[0]
     
     logs = query_db(f"""
-    SELECT * FROM audit_logs 
+    SELECT id, user_id, username, user_role, action, target_type, target_id, previous_state, new_state, notes, created_at
+    FROM audit_logs 
     WHERE {where_sql} 
     ORDER BY created_at DESC 
     LIMIT ? OFFSET ?
@@ -48,5 +51,9 @@ def list_audit_logs(
             "limit": limit,
             "total_records": total_count,
             "total_pages": total_pages
+        },
+        "viewer_info": {
+            "requested_by": current_user["username"],
+            "role": current_user["role"]
         }
     }

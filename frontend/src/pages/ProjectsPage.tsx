@@ -67,7 +67,7 @@ export const ProjectsPage: React.FC = () => {
         limit,
       });
       setProjects(res.data);
-      setPagination(res.pagination);
+      setPagination(res.meta);
     } catch (err) {
       console.error('Failed to load projects', err);
     } finally {
@@ -301,8 +301,8 @@ export const ProjectsPage: React.FC = () => {
             <div className="p-3.5 bg-[#F7F8F6] border-t border-[#E5E7EB] flex items-center justify-between text-xs text-[#667085]">
               <div>
                 Showing <strong className="text-[#172033] font-mono">{((page - 1) * limit) + 1}</strong> to{' '}
-                <strong className="text-[#172033] font-mono">{Math.min(page * limit, pagination.total_records)}</strong> of{' '}
-                <strong className="text-[#172033] font-mono">{formatNumber(pagination.total_records)}</strong> records
+                <strong className="text-[#172033] font-mono">{Math.min(page * limit, pagination.total)}</strong> of{' '}
+                <strong className="text-[#172033] font-mono">{formatNumber(pagination.total)}</strong> records
               </div>
 
               <div className="flex items-center gap-2">

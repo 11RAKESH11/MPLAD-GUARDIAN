@@ -49,10 +49,15 @@ for house in ["lok sabha", "rajya sabha"]:
             headers = [h.strip() for h in headers]
             
             work_col = None
-            for h in headers:
-                if h.lower() in ["work", "work id", "workid"]:
-                    work_col = h
-                    break
+            if "Work ID" in headers:
+                work_col = "Work ID"
+            elif "Work" in headers:
+                work_col = "Work"
+            else:
+                for h in headers:
+                    if h.lower() in ["work", "work id", "workid"]:
+                        work_col = h
+                        break
                     
             if not work_col:
                 continue
@@ -86,9 +91,13 @@ for house in ["lok sabha", "rajya sabha"]:
     print(f"Unique Completed Codes:    {len(comp_codes):,}")
     print(f"Unique Expenditure Codes:  {len(exp_codes):,}")
     
-    print(f"Sanctioned in Recommended: {len(sanc_codes & rec_codes):,} ({round(len(sanc_codes & rec_codes)/len(sanc_codes)*100, 1)}%)")
-    print(f"Completed in Sanctioned:   {len(comp_codes & sanc_codes):,} ({round(len(comp_codes & sanc_codes)/len(comp_codes)*100, 1)}%)")
-    print(f"Expenditure in Sanctioned: {len(exp_codes & sanc_codes):,} ({round(len(exp_codes & sanc_codes)/len(exp_codes)*100, 1)}%)")
+    sanc_pct = round(len(sanc_codes & rec_codes)/len(sanc_codes)*100, 1) if sanc_codes else 0
+    comp_pct = round(len(comp_codes & sanc_codes)/len(comp_codes)*100, 1) if comp_codes else 0
+    exp_pct = round(len(exp_codes & sanc_codes)/len(exp_codes)*100, 1) if exp_codes else 0
+    
+    print(f"Sanctioned in Recommended: {len(sanc_codes & rec_codes):,} ({sanc_pct}%)")
+    print(f"Completed in Sanctioned:   {len(comp_codes & sanc_codes):,} ({comp_pct}%)")
+    print(f"Expenditure in Sanctioned: {len(exp_codes & sanc_codes):,} ({exp_pct}%)")
     
     all_unique = rec_codes | sanc_codes | comp_codes | exp_codes
     print(f"TOTAL UNIQUE LIFECYCLE WORK CODES: {len(all_unique):,}")

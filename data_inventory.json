@@ -1,0 +1,1046 @@
+{
+  "dataset_name": "MPLADS Official Operational Dataset (MoSPI)",
+  "inventory_generated_at": "2026-08-24T00:30:00Z",
+  "total_files": 12,
+  "total_raw_rows": 374141,
+  "total_size_bytes": 118075660,
+  "files": [
+    {
+      "filename": "lok sabha/Allocated Limit for Honble MPs -Loksabha.csv",
+      "file_size_bytes": 36133,
+      "file_size_mb": 0.034,
+      "sha256": "c4888689983af565a24fc619d852f850576e0f8061a8c45ec0cf3d31ad7e48aa",
+      "row_count": 544,
+      "column_count": 5,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "State",
+        "Hon'ble Members of Parliaments",
+        "Constituency",
+        "Allocated AMOUNT ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "35ee7f27144cb06628e2f416a9bdb6d22f23104fd191837ab556e734e6d97ba9",
+      "date_range": {
+        "earliest": null,
+        "latest": null,
+        "valid_dates_count": 0
+      },
+      "financial_years": [],
+      "state_count": 36,
+      "district_count": 0,
+      "states_sample": [
+        "Andaman And Nicobar Islands",
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.18
+        },
+        "Hon'ble Members of Parliaments": {
+          "missing_count": 1,
+          "missing_percentage": 0.18
+        },
+        "Constituency": {
+          "missing_count": 1,
+          "missing_percentage": 0.18
+        },
+        "Allocated AMOUNT ( \u20b9 )": {
+          "missing_count": 1,
+          "missing_percentage": 0.18
+        }
+      }
+    },
+    {
+      "filename": "lok sabha/Amount consented for Calamity-Loksabha.csv",
+      "file_size_bytes": 1336,
+      "file_size_mb": 0.001,
+      "sha256": "7f75cf2105b1084ac47ba5e4c6a794a3c878edea5d66bf47fdf6c9c26762e4d6",
+      "row_count": 13,
+      "column_count": 6,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Calamity Type",
+        "Calamity Name",
+        "Hon'ble Members of Parliament",
+        "Date of Consent",
+        "Consent Amount ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "c29f74c659120444746f833fe99d147ae5697227108836e5ca43687800f5728e",
+      "date_range": {
+        "earliest": "2024-09-03",
+        "latest": "2025-12-07",
+        "valid_dates_count": 12
+      },
+      "financial_years": [],
+      "state_count": 0,
+      "district_count": 0,
+      "states_sample": [],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Calamity Type": {
+          "missing_count": 1,
+          "missing_percentage": 7.69
+        },
+        "Calamity Name": {
+          "missing_count": 1,
+          "missing_percentage": 7.69
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 7.69
+        },
+        "Date of Consent": {
+          "missing_count": 1,
+          "missing_percentage": 7.69
+        },
+        "Consent Amount ( \u20b9 )": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    },
+    {
+      "filename": "lok sabha/Expenditure on Completed and On-going Works as on Date-Loksabha.csv",
+      "file_size_bytes": 20593085,
+      "file_size_mb": 19.639,
+      "sha256": "b6def5862d530b1c3009de43283b7d2ef1f78f60bd158163cb968b4a68a1d57f",
+      "row_count": 81695,
+      "column_count": 11,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "State",
+        "Work",
+        "Work ID",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Expenditure Date",
+        "Vendor Name",
+        "Payment Status",
+        "Fund Disbursed Amount ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "f067af7c2326ef04e61a2ad90ad93654d7381d56fd48440d3c4c9df8ea69de8d",
+      "date_range": {
+        "earliest": "2024-07-25",
+        "latest": "2026-08-23",
+        "valid_dates_count": 81694
+      },
+      "financial_years": [
+        "2024-2025",
+        "2025-2026",
+        "2026-2027"
+      ],
+      "state_count": 35,
+      "district_count": 733,
+      "states_sample": [
+        "Andaman And Nicobar Islands",
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work ID": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Constituency": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Expenditure Date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Vendor Name": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Payment Status": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Fund Disbursed Amount ( \u20b9 )": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    },
+    {
+      "filename": "lok sabha/Works Completed-Loksabha.csv",
+      "file_size_bytes": 10765976,
+      "file_size_mb": 10.267,
+      "sha256": "d9d70320f87c5cc1cd17699ca187933c6bf016f77f8166118edbd052f85b1ff1",
+      "row_count": 33664,
+      "column_count": 11,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Work Category",
+        "Work",
+        "State",
+        "IDA",
+        "Work Description",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Image",
+        "Completion Date",
+        "Amount Disbursed ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "3403ab0b576e7b129baca273e0936debee8cb33c02b83ae35abe66708c552386",
+      "date_range": {
+        "earliest": "2024-08-12",
+        "latest": "2026-08-23",
+        "valid_dates_count": 33663
+      },
+      "financial_years": [
+        "0265-2025",
+        "0280-2025",
+        "1037-1033",
+        "2000-2500",
+        "2012-3028",
+        "2023-2024",
+        "2024-2025",
+        "2025-2026",
+        "2026-2027",
+        "5500-6500",
+        "9891-2025"
+      ],
+      "state_count": 33,
+      "district_count": 664,
+      "states_sample": [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chandigarh"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Work Category": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work Description": {
+          "missing_count": 80,
+          "missing_percentage": 0.24
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Constituency": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Image": {
+          "missing_count": 9304,
+          "missing_percentage": 27.64
+        },
+        "Completion Date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Amount Disbursed ( \u20b9 )": {
+          "missing_count": 92,
+          "missing_percentage": 0.27
+        }
+      }
+    },
+    {
+      "filename": "lok sabha/Works Recommended-Loksabha.csv",
+      "file_size_bytes": 32879480,
+      "file_size_mb": 31.356,
+      "sha256": "9fb927d6d1c483430bdbad3e4305dba08aecdd71d1b7507033e6c10a55f8ec74",
+      "row_count": 102327,
+      "column_count": 11,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Work category",
+        "WORK",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Work description",
+        "Recommended date",
+        "RECOMMENDED AMOUNT   ( \u20b9 )",
+        "Sanction Date"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "a7face2916bb568c0d2a9b8451045218614a2f686fc25304675547f5ca84f0df",
+      "date_range": {
+        "earliest": "2024-07-08",
+        "latest": "2026-08-23",
+        "valid_dates_count": 179439
+      },
+      "financial_years": [
+        "0265-2025",
+        "0280-2025",
+        "1037-1033",
+        "1067-1140",
+        "1100-1250",
+        "1464-7218",
+        "2000-2500",
+        "2012-3028",
+        "2023-2024",
+        "2024-2025",
+        "2025-2025",
+        "2025-2026",
+        "2026-2027",
+        "4174-6190",
+        "5085-5778",
+        "5500-6500",
+        "8158-0706",
+        "8556-0768",
+        "8725-8809",
+        "8766-2872",
+        "8767-9325",
+        "8773-4288",
+        "9142-3103",
+        "9891-2025"
+      ],
+      "state_count": 36,
+      "district_count": 760,
+      "states_sample": [
+        "Andaman And Nicobar Islands",
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Work category": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "WORK": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Constituency": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work description": {
+          "missing_count": 114,
+          "missing_percentage": 0.11
+        },
+        "Recommended date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "RECOMMENDED AMOUNT   ( \u20b9 )": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Sanction Date": {
+          "missing_count": 25213,
+          "missing_percentage": 24.64
+        }
+      }
+    },
+    {
+      "filename": "lok sabha/Works Sanctioned-Loksabha.csv",
+      "file_size_bytes": 27015540,
+      "file_size_mb": 25.764,
+      "sha256": "5e09e7a3fcc79fe4297d2c8406f991bb97548e35650e17f7b76b8eee4e864ea2",
+      "row_count": 77470,
+      "column_count": 12,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Work category",
+        "Work",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Constituency",
+        "Work description",
+        "Recommended date",
+        "Sanction Date",
+        "Sanction Amount ( \u20b9 )",
+        "Work Status"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "fa7587a06686b0854912920af75ebcc5ef5640a8bc1982fdbfc48f7263f23939",
+      "date_range": {
+        "earliest": "2024-07-08",
+        "latest": "2026-08-22",
+        "valid_dates_count": 154938
+      },
+      "financial_years": [
+        "0265-2025",
+        "0280-2025",
+        "1037-1033",
+        "1067-1140",
+        "1100-1250",
+        "2000-2500",
+        "2012-3028",
+        "2023-2024",
+        "2024-2025",
+        "2025-2025",
+        "2025-2026",
+        "2026-2027",
+        "5500-6500",
+        "9891-2025"
+      ],
+      "state_count": 36,
+      "district_count": 751,
+      "states_sample": [
+        "Andaman And Nicobar Islands",
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Work category": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Constituency": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work description": {
+          "missing_count": 97,
+          "missing_percentage": 0.13
+        },
+        "Recommended date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Sanction Date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Sanction Amount ( \u20b9 )": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work Status": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    },
+    {
+      "filename": "rajya sabha/Allocated Limit for Honble MPs-Rajyasabha.csv",
+      "file_size_bytes": 20403,
+      "file_size_mb": 0.019,
+      "sha256": "25486cd0a3d02bba05ab04753b40c786abf5f23bd90c30f1c3420956cbf471da",
+      "row_count": 222,
+      "column_count": 5,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "State",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Allocated AMOUNT ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "ba0c9d44bda0721ae8b31a6397ad0a3cbaa9e02fc16232a911572f7da6b6f6e9",
+      "date_range": {
+        "earliest": null,
+        "latest": null,
+        "valid_dates_count": 0
+      },
+      "financial_years": [
+        "2020-2026",
+        "2021-2027",
+        "2022-2028",
+        "2023-2026",
+        "2023-2029",
+        "2024-2028",
+        "2024-2030",
+        "2025-2028",
+        "2025-2031",
+        "2026-2028",
+        "2026-2029",
+        "2026-2032"
+      ],
+      "state_count": 32,
+      "district_count": 0,
+      "states_sample": [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chandigarh"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.45
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.45
+        },
+        "Elected/Nominated": {
+          "missing_count": 1,
+          "missing_percentage": 0.45
+        },
+        "Allocated AMOUNT ( \u20b9 )": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    },
+    {
+      "filename": "rajya sabha/Amount consented for Calamity-Rajyasabha.csv",
+      "file_size_bytes": 2525,
+      "file_size_mb": 0.002,
+      "sha256": "e942f2aaf7480b95d2e4c14e4d9f440a814379cba4d0260d1e76099696c7c76c",
+      "row_count": 21,
+      "column_count": 6,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Calamity Type",
+        "Calamity Name",
+        "Hon'ble Members of Parliament",
+        "Date of Consent",
+        "Consent Amount ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "72618cba2434e654eacab7d36bccba038ddf8d16800e4792b0430d3a199e9a23",
+      "date_range": {
+        "earliest": "2024-09-10",
+        "latest": "2025-11-17",
+        "valid_dates_count": 20
+      },
+      "financial_years": [
+        "2020-2026",
+        "2021-2027",
+        "2022-2028",
+        "2024-2030"
+      ],
+      "state_count": 0,
+      "district_count": 0,
+      "states_sample": [],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Calamity Type": {
+          "missing_count": 1,
+          "missing_percentage": 4.76
+        },
+        "Calamity Name": {
+          "missing_count": 1,
+          "missing_percentage": 4.76
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 4.76
+        },
+        "Date of Consent": {
+          "missing_count": 1,
+          "missing_percentage": 4.76
+        },
+        "Consent Amount ( \u20b9 )": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    },
+    {
+      "filename": "rajya sabha/Expenditure on Completed and On-going Works as on Date-Rajyasabha.csv",
+      "file_size_bytes": 6947686,
+      "file_size_mb": 6.626,
+      "sha256": "cad5530b7d08602460d1e6c1eecc41eb8c21be799077b5053d15b3cfa52b8c87",
+      "row_count": 24749,
+      "column_count": 11,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "State",
+        "Work",
+        "Work ID",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Expenditure Date",
+        "Vendor Name",
+        "Payment Status",
+        "Fund Disbursed Amount ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "aa98c2de9d47166de2acd087dfc6cbc64b8fdf4e2c5b376d57082cabeac8c942",
+      "date_range": {
+        "earliest": "2023-07-27",
+        "latest": "2026-08-23",
+        "valid_dates_count": 24748
+      },
+      "financial_years": [
+        "2020-2026",
+        "2021-2027",
+        "2022-2028",
+        "2023-2024",
+        "2023-2026",
+        "2023-2029",
+        "2024-2025",
+        "2024-2028",
+        "2024-2030",
+        "2025-2026",
+        "2025-2028",
+        "2025-2031",
+        "2026-2027",
+        "2026-2032"
+      ],
+      "state_count": 28,
+      "district_count": 523,
+      "states_sample": [
+        "Andhra Pradesh",
+        "Assam",
+        "Bihar",
+        "Chandigarh",
+        "Chhattisgarh"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work ID": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Elected/Nominated": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Expenditure Date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Vendor Name": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Payment Status": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Fund Disbursed Amount ( \u20b9 )": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    },
+    {
+      "filename": "rajya sabha/Works Completed-Rajyasabha.csv",
+      "file_size_bytes": 3517749,
+      "file_size_mb": 3.355,
+      "sha256": "5b4874ca2da94a7249f2ca3801688e0c4030a7304d280d4aa721d845c76e4cff",
+      "row_count": 9831,
+      "column_count": 11,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Work Category",
+        "Work",
+        "State",
+        "IDA",
+        "Work Description",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Image",
+        "Completion Date",
+        "Amount Disbursed ( \u20b9 )"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "5dd3e515a591e955e93e56fb420e61f6d567346ab0d28220f355037f0ec201f3",
+      "date_range": {
+        "earliest": "2023-08-02",
+        "latest": "2026-08-22",
+        "valid_dates_count": 9830
+      },
+      "financial_years": [
+        "2022-2023",
+        "2023-2024",
+        "2024-2025",
+        "2025-2026",
+        "2026-2027"
+      ],
+      "state_count": 28,
+      "district_count": 424,
+      "states_sample": [
+        "Andhra Pradesh",
+        "Assam",
+        "Bihar",
+        "Chandigarh",
+        "Chhattisgarh"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Work Category": {
+          "missing_count": 6,
+          "missing_percentage": 0.06
+        },
+        "Work": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Work Description": {
+          "missing_count": 7,
+          "missing_percentage": 0.07
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Elected/Nominated": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Image": {
+          "missing_count": 3459,
+          "missing_percentage": 35.18
+        },
+        "Completion Date": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Amount Disbursed ( \u20b9 )": {
+          "missing_count": 17,
+          "missing_percentage": 0.17
+        }
+      }
+    },
+    {
+      "filename": "rajya sabha/Works Recommended-Rajyasabha.csv",
+      "file_size_bytes": 8858631,
+      "file_size_mb": 8.448,
+      "sha256": "cb29c2e23a3d066b2ad09ef68f71e4ff26b6f247cb519252a06faddf1c68f660",
+      "row_count": 24526,
+      "column_count": 11,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Work category",
+        "WORK",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Work description",
+        "Recommended date",
+        "RECOMMENDED AMOUNT   ( \u20b9 )",
+        "Sanction Date"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "066d39eb0ab5b03ebd28be903b54166772084b5ecd7b54dd9c28cb63ef956ee1",
+      "date_range": {
+        "earliest": "2023-06-14",
+        "latest": "2026-08-23",
+        "valid_dates_count": 43374
+      },
+      "financial_years": [
+        "2020-2026",
+        "2021-2027",
+        "2022-2023",
+        "2022-2028",
+        "2023-2024",
+        "2023-2026",
+        "2023-2029",
+        "2024-2025",
+        "2024-2028",
+        "2024-2030",
+        "2025-2026",
+        "2025-2028",
+        "2025-2031",
+        "2026-2027",
+        "2026-2028",
+        "2026-2032"
+      ],
+      "state_count": 29,
+      "district_count": 611,
+      "states_sample": [
+        "Andhra Pradesh",
+        "Assam",
+        "Bihar",
+        "Chandigarh",
+        "Chhattisgarh"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Work category": {
+          "missing_count": 6,
+          "missing_percentage": 0.02
+        },
+        "WORK": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Elected/Nominated": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Work description": {
+          "missing_count": 23,
+          "missing_percentage": 0.09
+        },
+        "Recommended date": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "RECOMMENDED AMOUNT   ( \u20b9 )": {
+          "missing_count": 1,
+          "missing_percentage": 0.0
+        },
+        "Sanction Date": {
+          "missing_count": 5676,
+          "missing_percentage": 23.14
+        }
+      }
+    },
+    {
+      "filename": "rajya sabha/Works Sanctioned-Rajyasabha.csv",
+      "file_size_bytes": 7437116,
+      "file_size_mb": 7.093,
+      "sha256": "4cd61841d61340dd7e1fa1f959bf6551523ad217dee2ac59ce51e9018302d3c2",
+      "row_count": 19079,
+      "column_count": 12,
+      "columns": [
+        "\ufeff\"Sr. No.\"",
+        "Work category",
+        "Work",
+        "State",
+        "IDA",
+        "Hon'ble Members of Parliament",
+        "Elected/Nominated",
+        "Work description",
+        "Recommended date",
+        "Sanction Date",
+        "Sanction Amount ( \u20b9 )",
+        "Work Status"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "sample_hash": "02e0a97b211838d96e4af7e3c412440c26e331ce798762ee39533ada3037d77b",
+      "date_range": {
+        "earliest": "2023-06-14",
+        "latest": "2026-08-22",
+        "valid_dates_count": 38156
+      },
+      "financial_years": [
+        "2020-2026",
+        "2021-2027",
+        "2022-2023",
+        "2022-2028",
+        "2023-2024",
+        "2023-2026",
+        "2023-2029",
+        "2024-2025",
+        "2024-2028",
+        "2024-2030",
+        "2025-2026",
+        "2025-2028",
+        "2025-2031",
+        "2026-2027",
+        "2026-2032"
+      ],
+      "state_count": 28,
+      "district_count": 564,
+      "states_sample": [
+        "Andhra Pradesh",
+        "Assam",
+        "Bihar",
+        "Chandigarh",
+        "Chhattisgarh"
+      ],
+      "missing_value_summary": {
+        "\ufeff\"Sr. No.\"": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        },
+        "Work category": {
+          "missing_count": 8,
+          "missing_percentage": 0.04
+        },
+        "Work": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "State": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "IDA": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Hon'ble Members of Parliament": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Elected/Nominated": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Work description": {
+          "missing_count": 12,
+          "missing_percentage": 0.06
+        },
+        "Recommended date": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Sanction Date": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Sanction Amount ( \u20b9 )": {
+          "missing_count": 1,
+          "missing_percentage": 0.01
+        },
+        "Work Status": {
+          "missing_count": 0,
+          "missing_percentage": 0.0
+        }
+      }
+    }
+  ],
+  "total_size_mb": 112.61
+}

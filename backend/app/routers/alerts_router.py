@@ -1,13 +1,13 @@
 from fastapi import APIRouter, HTTPException, Query, Depends, Body
 from backend.app.database import query_db, execute_db
-from backend.app.auth import get_current_user
-from pydantic import BaseModel
+from backend.app.auth import require_role, get_current_user
+from pydantic import BaseModel, Field
 from typing import Optional
 import datetime
 import json
 import math
 
-router = APIRouter(prefix="/api/alerts", tags=["Alert Management Center"])
+router = APIRouter(prefix="/api/v1/alerts", tags=["Alert Management Center"])
 
 class UpdateAlertStatusRequest(BaseModel):
     status: str # OPEN, UNDER_REVIEW, EVIDENCE_REQUESTED, VALIDATED, NOT_SUBSTANTIATED, RESOLVED, CLOSED
@@ -117,10 +117,10 @@ def list_alerts(
     return {
         "data": formatted_rows,
         "summary": dict(summary) if summary else {},
-        "pagination": {
+        "meta": {
             "page": page,
-            "limit": limit,
-            "total_records": total_records,
+            "page_size": limit,
+            "total": total_records,
             "total_pages": total_pages,
             "has_next": page < total_pages,
             "has_prev": page > 1
@@ -257,7 +257,7 @@ def get_alert_detail(alert_id: str):
 def update_alert_status(
     alert_id: str,
     req: UpdateAlertStatusRequest,
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(require_role(["ADMIN", "ANALYST"]))
 ):
     alert = query_db("SELECT * FROM alerts WHERE id = ?", (alert_id,), one=True)
     if not alert:
@@ -311,4 +311,71 @@ def update_alert_status(
         "new_status": new_status,
         "updated_by": user_name,
         "updated_at": now_str
+    }
+
+class AddAnalystNoteRequest(BaseModel):
+    notes: str = Field(..., min_length=1)
+
+@router.post("/{alert_id}/notes")
+def add_alert_note(
+    alert_id: str,
+    req: AddAnalystNoteRequest,
+    current_user: dict = Depends(require_role(["ADMIN", "ANALYST"]))
+):
+    """Appends an official desk-review note to an alert dossier with permanent audit trail."""
+    alert_row = query_db("SELECT * FROM alerts WHERE id = ? OR work_code = ?", (alert_id, alert_id), one=True)
+    if not alert_row:
+        raise HTTPException(status_code=404, detail="Alert record not found")
+    alert = dict(alert_row)
+        
+    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    user_name = current_user.get("full_name") or current_user.get("username", "Analyst")
+    user_id = current_user.get("id", "usr-analyst")
+    user_role = current_user.get("role", "ANALYST")
+    
+    current_notes = alert.get("resolution_notes") or ""
+    timestamped_note = f"[{now_str} - {user_name} ({user_role})]: {req.notes}"
+    updated_notes = f"{current_notes}\n{timestamped_note}".strip() if current_notes else timestamped_note
+    
+    execute_db("""
+    UPDATE alerts SET resolution_notes = ? WHERE id = ?
+    """, (updated_notes, alert["id"]))
+    
+    execute_db("""
+    INSERT INTO audit_logs (user_id, username, user_role, action, target_type, target_id, previous_state, new_state, notes, created_at)
+    VALUES (?, ?, ?, 'ANALYST_NOTE_ADDED', 'ALERT', ?, ?, ?, ?, ?)
+    """, (
+        user_id, user_name, user_role,
+        alert["id"], alert.get("status", "OPEN"), alert.get("status", "OPEN"),
+        req.notes, now_str
+    ))
+    
+    return {
+        "success": True,
+        "alert_id": alert["id"],
+        "added_by": user_name,
+        "created_at": now_str,
+        "note": req.notes
+    }
+
+@router.get("/{alert_id}/history")
+def get_alert_investigation_history(alert_id: str):
+    """Returns the full chronological audit trail and investigation lifecycle for an alert/project."""
+    alert = query_db("SELECT * FROM alerts WHERE id = ? OR work_code = ?", (alert_id, alert_id), one=True)
+    target_ids = [alert_id]
+    if alert:
+        target_ids.extend([alert["id"], alert["work_code"]])
+        
+    placeholders = ",".join(["?"] * len(target_ids))
+    logs = query_db(f"""
+    SELECT id, user_id, username, user_role, action, target_type, target_id, previous_state, new_state, notes, created_at
+    FROM audit_logs
+    WHERE target_id IN ({placeholders})
+    ORDER BY created_at DESC
+    """, tuple(target_ids))
+    
+    return {
+        "target_id": alert_id,
+        "count": len(logs),
+        "history": [dict(l) for l in logs]
     }

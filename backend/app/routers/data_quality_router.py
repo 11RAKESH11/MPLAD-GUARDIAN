@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from backend.app.database import query_db
 from backend.app.cache import timed_cache
 
-router = APIRouter(prefix="/api/data-quality", tags=["Data Quality & Health Center"])
+router = APIRouter(prefix="/api/v1/data-quality", tags=["Data Quality & Health Center"])
 
 @router.get("/summary")
 @timed_cache(60.0)

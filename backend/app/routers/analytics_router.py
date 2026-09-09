@@ -4,7 +4,7 @@ from fastapi import APIRouter, Query, HTTPException
 from backend.app.database import query_db
 from backend.app.cache import timed_cache
 
-router = APIRouter(prefix="/api/analytics", tags=["Analytics & Map"])
+router = APIRouter(prefix="/api/v1/analytics", tags=["Analytics & Map"])
 
 STATE_CODE_MAP = {
   'Uttar Pradesh': 'UP', 'Gujarat': 'GJ', 'Madhya Pradesh': 'MP', 'Bihar': 'BR',

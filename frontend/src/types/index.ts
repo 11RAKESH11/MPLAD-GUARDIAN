@@ -128,6 +128,7 @@ export interface DashboardOverview {
     total_expenditure_funds: number;
     total_disbursed_funds: number;
     utilization_rate_pct: number;
+    completion_rate_pct?: number;
     completed_works: number;
     sanctioned_works: number;
     inspection_works: number;
@@ -351,9 +352,101 @@ export interface DataQualitySummary {
 
 export interface Pagination {
   page: number;
-  limit: number;
-  total_records: number;
+  page_size: number;
+  total: number;
   total_pages: number;
   has_next: boolean;
   has_prev: boolean;
+}
+
+export interface AttentionItem {
+  alert_id: string;
+  work_code: string;
+  signal_type: string;
+  raw_signal_type?: string;
+  title: string;
+  severity: AlertSeverity;
+  state: string;
+  district: string;
+  category: string;
+  sanctioned_amount: number;
+  risk_score: number;
+  confidence: number;
+  priority_score: number;
+  evidence_snippet: string;
+  why_prioritized: string;
+  status: AlertStatus;
+}
+
+export interface FundFlowStage {
+  id: string;
+  name: string;
+  amount: number;
+  records_count: number;
+  percentage_of_sanctioned: number;
+  description: string;
+  source: string;
+}
+
+export interface FundFlowResponse {
+  stages: FundFlowStage[];
+  total_sanctioned: number;
+  total_expenditure: number;
+  utilization_rate_pct: number;
+}
+
+export interface SignalDistributionItem {
+  type_key: string;
+  label: string;
+  count: number;
+  critical_count: number;
+}
+
+export interface SignalDistributionResponse {
+  signals: SignalDistributionItem[];
+  total_alerts: number;
+  overlap_note: string;
+  risk_distribution: {
+    critical?: number;
+    high?: number;
+    medium?: number;
+    low?: number;
+  };
+  confidence_distribution: {
+    high_confidence?: number;
+    moderate_confidence?: number;
+    limited_evidence?: number;
+  };
+}
+
+export interface WhatChangedMetric {
+  name: string;
+  current: number;
+  previous: number;
+  diff_pct: number;
+  explanation: string;
+  neutral_note: string;
+}
+
+export interface WhatChangedResponse {
+  historical_comparison_available: boolean;
+  current_period?: string;
+  previous_period?: string;
+  comparison_label?: string;
+  metrics?: WhatChangedMetric[];
+  message?: string;
+}
+
+export interface StateIndicatorItem {
+  state: string;
+  total_projects: number;
+  total_sanctioned: number;
+  total_expenditure: number;
+  utilization_rate_pct: number;
+  completion_rate_pct: number;
+  signal_count: number;
+}
+
+export interface StateIndicatorsResponse {
+  states: StateIndicatorItem[];
 }

@@ -5,7 +5,7 @@ from pydantic import BaseModel
 import json
 import numpy as np
 
-router = APIRouter(prefix="/api/risks", tags=["AI Risk & Anomaly Intelligence"])
+router = APIRouter(prefix="/api/v1/risks", tags=["AI Risk & Anomaly Intelligence"])
 
 @router.get("/summary")
 @timed_cache(60.0)

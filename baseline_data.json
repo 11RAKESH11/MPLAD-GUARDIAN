@@ -1,0 +1,1621 @@
+{
+  "sqlite_version": "3.38.4",
+  "database_file": "mplad.db",
+  "file_size_bytes": 473538560,
+  "file_size_mb": 451.6,
+  "tables": {
+    "projects": {
+      "row_count": 96654,
+      "column_count": 28,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "work_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "house",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "mp_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "mp_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "mp_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "district",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "constituency",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "ida_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "category",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "work_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "recommended_date",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "sanction_date",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "completion_date",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "financial_year",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "recommended_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 19,
+          "name": "sanctioned_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 20,
+          "name": "disbursed_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 21,
+          "name": "expenditure_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 22,
+          "name": "utilization_pct",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 23,
+          "name": "vendor_count",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 24,
+          "name": "voucher_count",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 25,
+          "name": "has_image",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 26,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 27,
+          "name": "raw_data",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE projects (\n        id TEXT PRIMARY KEY,\n        work_code TEXT UNIQUE,\n        house TEXT,\n        mp_code TEXT,\n        mp_name TEXT,\n        mp_type TEXT,\n        state TEXT,\n        district TEXT,\n        constituency TEXT,\n        ida_name TEXT,\n        category TEXT,\n        work_type TEXT,\n        description TEXT,\n        status TEXT,\n        recommended_date TEXT,\n        sanction_date TEXT,\n        completion_date TEXT,\n        financial_year TEXT,\n        recommended_amount REAL DEFAULT 0.0,\n        sanctioned_amount REAL DEFAULT 0.0,\n        disbursed_amount REAL DEFAULT 0.0,\n        expenditure_amount REAL DEFAULT 0.0,\n        utilization_pct REAL DEFAULT 0.0,\n        vendor_count INTEGER DEFAULT 0,\n        voucher_count INTEGER DEFAULT 0,\n        has_image INTEGER DEFAULT 0,\n        created_at TEXT,\n        raw_data TEXT\n    )"
+    },
+    "mps": {
+      "row_count": 764,
+      "column_count": 15,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "house",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "constituency",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "mp_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "allocated_limit",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "calamity_consent_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "total_recommended_works",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "total_sanctioned_works",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "total_completed_works",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "total_sanctioned_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "total_expenditure_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "avg_risk_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE mps (\n        id TEXT PRIMARY KEY,\n        name TEXT,\n        house TEXT,\n        state TEXT,\n        constituency TEXT,\n        mp_type TEXT,\n        allocated_limit REAL DEFAULT 0.0,\n        calamity_consent_amount REAL DEFAULT 0.0,\n        total_recommended_works INTEGER DEFAULT 0,\n        total_sanctioned_works INTEGER DEFAULT 0,\n        total_completed_works INTEGER DEFAULT 0,\n        total_sanctioned_amount REAL DEFAULT 0.0,\n        total_expenditure_amount REAL DEFAULT 0.0,\n        avg_risk_score REAL DEFAULT 0.0,\n        created_at TEXT\n    )"
+    },
+    "expenditure_vouchers": {
+      "row_count": 106442,
+      "column_count": 12,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "work_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "ida_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "mp_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "constituency",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "expenditure_date",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "vendor_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "payment_status",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "disbursed_amount",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "house",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE expenditure_vouchers (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        work_code TEXT,\n        state TEXT,\n        ida_name TEXT,\n        mp_name TEXT,\n        constituency TEXT,\n        expenditure_date TEXT,\n        vendor_name TEXT,\n        payment_status TEXT,\n        disbursed_amount REAL DEFAULT 0.0,\n        house TEXT,\n        created_at TEXT\n    )"
+    },
+    "risk_scores": {
+      "row_count": 96654,
+      "column_count": 19,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "work_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "overall_risk_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "risk_level",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "confidence",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "cost_anomaly_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "duplicate_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "progress_gap_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "geographic_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "data_quality_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "coverage_pct",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "100.0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "cost_zscore",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "cost_mad_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "comparison_group_size",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "explanation_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "recommendation",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "model_version",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "calculated_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "''",
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "district",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "''",
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE risk_scores (\n        work_code TEXT PRIMARY KEY,\n        overall_risk_score REAL DEFAULT 0.0,\n        risk_level TEXT,\n        confidence REAL DEFAULT 0.0,\n        cost_anomaly_score REAL DEFAULT 0.0,\n        duplicate_score REAL DEFAULT 0.0,\n        progress_gap_score REAL DEFAULT 0.0,\n        geographic_score REAL DEFAULT 0.0,\n        data_quality_score REAL DEFAULT 0.0,\n        coverage_pct REAL DEFAULT 100.0,\n        cost_zscore REAL DEFAULT 0.0,\n        cost_mad_score REAL DEFAULT 0.0,\n        comparison_group_size INTEGER DEFAULT 0,\n        explanation_json TEXT,\n        recommendation TEXT,\n        model_version TEXT,\n        calculated_at TEXT\n    , state TEXT DEFAULT '', district TEXT DEFAULT '')"
+    },
+    "comparable_projects": {
+      "row_count": 36732,
+      "column_count": 6,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "target_work_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "comparable_work_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "similarity_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "similarity_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "reason",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE comparable_projects (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        target_work_code TEXT,\n        comparable_work_code TEXT,\n        similarity_score REAL,\n        similarity_type TEXT,\n        reason TEXT\n    )"
+    },
+    "alerts": {
+      "row_count": 270,
+      "column_count": 20,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "work_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "alert_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "title",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "severity",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "'OPEN'",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "district",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "evidence",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "impact",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "action_recommendation",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "acknowledged_by",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "acknowledged_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "resolved_by",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "resolved_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "resolution_notes",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "assigned_to",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "''",
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "priority_score",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 19,
+          "name": "impact_level",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "'HIGH'",
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE alerts (\n        id TEXT PRIMARY KEY,\n        work_code TEXT,\n        alert_type TEXT,\n        title TEXT,\n        severity TEXT,\n        status TEXT DEFAULT 'OPEN',\n        state TEXT,\n        district TEXT,\n        evidence TEXT,\n        impact TEXT,\n        action_recommendation TEXT,\n        acknowledged_by TEXT,\n        acknowledged_at TEXT,\n        resolved_by TEXT,\n        resolved_at TEXT,\n        resolution_notes TEXT,\n        created_at TEXT\n    , assigned_to TEXT DEFAULT '', priority_score REAL DEFAULT 0.0, impact_level TEXT DEFAULT 'HIGH')"
+    },
+    "data_quality_issues": {
+      "row_count": 0,
+      "column_count": 9,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "issue_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "severity",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "file_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "source_identifier",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "field_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "invalid_value",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE data_quality_issues (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        issue_type TEXT,\n        severity TEXT,\n        file_name TEXT,\n        source_identifier TEXT,\n        field_name TEXT,\n        invalid_value TEXT,\n        description TEXT,\n        created_at TEXT\n    )"
+    },
+    "users": {
+      "row_count": 3,
+      "column_count": 8,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "username",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "password_hash",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "full_name",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "email",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "role",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "department",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE users (\n        id TEXT PRIMARY KEY,\n        username TEXT UNIQUE,\n        password_hash TEXT,\n        full_name TEXT,\n        email TEXT,\n        role TEXT,\n        department TEXT,\n        created_at TEXT\n    )"
+    },
+    "audit_logs": {
+      "row_count": 94,
+      "column_count": 11,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "user_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "'usr-admin-01'",
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "username",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "'admin'",
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "user_role",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "'ADMIN'",
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "action",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "target_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "target_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "previous_state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "''",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "new_state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "''",
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": "''",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": 0,
+          "dflt_value": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE audit_logs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id TEXT DEFAULT 'usr-admin-01',\n    username TEXT DEFAULT 'admin',\n    user_role TEXT DEFAULT 'ADMIN',\n    action TEXT NOT NULL,\n    target_type TEXT NOT NULL,\n    target_id TEXT NOT NULL,\n    previous_state TEXT DEFAULT '',\n    new_state TEXT DEFAULT '',\n    notes TEXT DEFAULT '',\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n)"
+    },
+    "data_sources": {
+      "row_count": 12,
+      "column_count": 9,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "house",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "file_path",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "sha256_hash",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "row_count",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "col_count",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "file_size_bytes",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "last_ingested_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE data_sources (\n        id TEXT PRIMARY KEY,\n        name TEXT NOT NULL,\n        house TEXT NOT NULL,\n        file_path TEXT NOT NULL,\n        sha256_hash TEXT NOT NULL,\n        row_count INTEGER DEFAULT 0,\n        col_count INTEGER DEFAULT 0,\n        file_size_bytes INTEGER DEFAULT 0,\n        last_ingested_at TEXT\n    )"
+    },
+    "ingestion_runs": {
+      "row_count": 2,
+      "column_count": 16,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "source_hash",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "started_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "completed_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "rows_read",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "rows_accepted",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "rows_rejected",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "rows_updated",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "rows_inserted",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "duplicates_detected",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "validation_errors",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "warnings",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": "0",
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "app_version",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "schema_version",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE ingestion_runs (\n        run_id TEXT PRIMARY KEY,\n        source_file TEXT NOT NULL,\n        source_hash TEXT NOT NULL,\n        started_at TEXT NOT NULL,\n        completed_at TEXT,\n        status TEXT NOT NULL,\n        rows_read INTEGER DEFAULT 0,\n        rows_accepted INTEGER DEFAULT 0,\n        rows_rejected INTEGER DEFAULT 0,\n        rows_updated INTEGER DEFAULT 0,\n        rows_inserted INTEGER DEFAULT 0,\n        duplicates_detected INTEGER DEFAULT 0,\n        validation_errors INTEGER DEFAULT 0,\n        warnings INTEGER DEFAULT 0,\n        app_version TEXT,\n        schema_version TEXT\n    )"
+    },
+    "location_mappings": {
+      "row_count": 9,
+      "column_count": 8,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "raw_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "canonical_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "mapping_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "mapping_method",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "confidence",
+          "type": "REAL",
+          "notnull": 0,
+          "dflt_value": "1.0",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE location_mappings (\n        id TEXT PRIMARY KEY,\n        raw_name TEXT NOT NULL,\n        canonical_name TEXT NOT NULL,\n        state TEXT,\n        mapping_type TEXT NOT NULL,\n        mapping_method TEXT NOT NULL,\n        confidence REAL DEFAULT 1.0,\n        created_at TEXT\n    )"
+    },
+    "background_jobs": {
+      "row_count": 0,
+      "column_count": 7,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "job_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "job_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "updated_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "result_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "error_message",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "create_sql": "CREATE TABLE background_jobs (\n        job_id TEXT PRIMARY KEY,\n        status TEXT NOT NULL,\n        job_type TEXT NOT NULL,\n        created_at TEXT NOT NULL,\n        updated_at TEXT NOT NULL,\n        result_json TEXT,\n        error_message TEXT\n    )"
+    }
+  },
+  "indexes": [
+    {
+      "name": "idx_proj_state",
+      "sql": "CREATE INDEX idx_proj_state ON projects(state)"
+    },
+    {
+      "name": "idx_proj_district",
+      "sql": "CREATE INDEX idx_proj_district ON projects(district)"
+    },
+    {
+      "name": "idx_proj_status",
+      "sql": "CREATE INDEX idx_proj_status ON projects(status)"
+    },
+    {
+      "name": "idx_proj_mp",
+      "sql": "CREATE INDEX idx_proj_mp ON projects(mp_name)"
+    },
+    {
+      "name": "idx_proj_fy",
+      "sql": "CREATE INDEX idx_proj_fy ON projects(financial_year)"
+    },
+    {
+      "name": "idx_vouchers_wc",
+      "sql": "CREATE INDEX idx_vouchers_wc ON expenditure_vouchers(work_code)"
+    },
+    {
+      "name": "idx_vouchers_vendor",
+      "sql": "CREATE INDEX idx_vouchers_vendor ON expenditure_vouchers(vendor_name)"
+    },
+    {
+      "name": "idx_alerts_wc",
+      "sql": "CREATE INDEX idx_alerts_wc ON alerts(work_code)"
+    },
+    {
+      "name": "idx_alerts_status",
+      "sql": "CREATE INDEX idx_alerts_status ON alerts(status)"
+    },
+    {
+      "name": "idx_alerts_severity",
+      "sql": "CREATE INDEX idx_alerts_severity ON alerts(severity)"
+    },
+    {
+      "name": "idx_risk_score",
+      "sql": "CREATE INDEX idx_risk_score ON risk_scores(overall_risk_score)"
+    },
+    {
+      "name": "idx_comp_target",
+      "sql": "CREATE INDEX idx_comp_target ON comparable_projects(target_work_code)"
+    },
+    {
+      "name": "idx_risk_cost_anom",
+      "sql": "CREATE INDEX idx_risk_cost_anom ON risk_scores(cost_anomaly_score)"
+    },
+    {
+      "name": "idx_risk_dup_score",
+      "sql": "CREATE INDEX idx_risk_dup_score ON risk_scores(duplicate_score)"
+    },
+    {
+      "name": "idx_risk_prog_gap",
+      "sql": "CREATE INDEX idx_risk_prog_gap ON risk_scores(progress_gap_score)"
+    },
+    {
+      "name": "idx_risk_level",
+      "sql": "CREATE INDEX idx_risk_level ON risk_scores(risk_level)"
+    },
+    {
+      "name": "idx_proj_category",
+      "sql": "CREATE INDEX idx_proj_category ON projects(category)"
+    },
+    {
+      "name": "idx_proj_state_dist",
+      "sql": "CREATE INDEX idx_proj_state_dist ON projects(state, district)"
+    },
+    {
+      "name": "idx_proj_sanc_amt",
+      "sql": "CREATE INDEX idx_proj_sanc_amt ON projects(sanctioned_amount)"
+    },
+    {
+      "name": "idx_comp_sim_score",
+      "sql": "CREATE INDEX idx_comp_sim_score ON comparable_projects(similarity_score)"
+    },
+    {
+      "name": "idx_risk_score_desc",
+      "sql": "CREATE INDEX idx_risk_score_desc ON risk_scores(overall_risk_score DESC)"
+    },
+    {
+      "name": "idx_risk_score_wc",
+      "sql": "CREATE INDEX idx_risk_score_wc ON risk_scores(overall_risk_score DESC, work_code)"
+    },
+    {
+      "name": "idx_proj_work_code",
+      "sql": "CREATE INDEX idx_proj_work_code ON projects(work_code)"
+    },
+    {
+      "name": "idx_risk_work_code",
+      "sql": "CREATE INDEX idx_risk_work_code ON risk_scores(work_code)"
+    },
+    {
+      "name": "idx_proj_fin_year",
+      "sql": "CREATE INDEX idx_proj_fin_year ON projects(financial_year)"
+    },
+    {
+      "name": "idx_vouchers_work_code",
+      "sql": "CREATE INDEX idx_vouchers_work_code ON expenditure_vouchers(work_code)"
+    },
+    {
+      "name": "idx_risk_state",
+      "sql": "CREATE INDEX idx_risk_state ON risk_scores(state)"
+    },
+    {
+      "name": "idx_risk_state_dist",
+      "sql": "CREATE INDEX idx_risk_state_dist ON risk_scores(state, district)"
+    },
+    {
+      "name": "idx_proj_state_covering",
+      "sql": "CREATE INDEX idx_proj_state_covering ON projects(state, sanctioned_amount, expenditure_amount, status)"
+    },
+    {
+      "name": "idx_risk_state_covering",
+      "sql": "CREATE INDEX idx_risk_state_covering ON risk_scores(state, risk_level, overall_risk_score)"
+    },
+    {
+      "name": "idx_proj_dist_covering",
+      "sql": "CREATE INDEX idx_proj_dist_covering ON projects(state, district, sanctioned_amount, expenditure_amount, status)"
+    },
+    {
+      "name": "idx_risk_dist_covering",
+      "sql": "CREATE INDEX idx_risk_dist_covering ON risk_scores(state, district, risk_level)"
+    },
+    {
+      "name": "idx_audit_target",
+      "sql": "CREATE INDEX idx_audit_target ON audit_logs(target_type, target_id)"
+    },
+    {
+      "name": "idx_audit_user",
+      "sql": "CREATE INDEX idx_audit_user ON audit_logs(username)"
+    },
+    {
+      "name": "idx_alerts_priority",
+      "sql": "CREATE INDEX idx_alerts_priority ON alerts(priority_score DESC)"
+    },
+    {
+      "name": "idx_alerts_status_sev",
+      "sql": "CREATE INDEX idx_alerts_status_sev ON alerts(status, severity)"
+    },
+    {
+      "name": "idx_proj_mp_name",
+      "sql": "CREATE INDEX idx_proj_mp_name ON projects(mp_name)"
+    },
+    {
+      "name": "idx_risk_score_val",
+      "sql": "CREATE INDEX idx_risk_score_val ON risk_scores(overall_risk_score DESC)"
+    },
+    {
+      "name": "idx_alerts_work_code",
+      "sql": "CREATE INDEX idx_alerts_work_code ON alerts(work_code)"
+    },
+    {
+      "name": "idx_vouchers_date",
+      "sql": "CREATE INDEX idx_vouchers_date ON expenditure_vouchers(expenditure_date)"
+    },
+    {
+      "name": "idx_comparable_target",
+      "sql": "CREATE INDEX idx_comparable_target ON comparable_projects(target_work_code)"
+    },
+    {
+      "name": "idx_audit_created",
+      "sql": "CREATE INDEX idx_audit_created ON audit_logs(created_at DESC)"
+    },
+    {
+      "name": "idx_audit_action",
+      "sql": "CREATE INDEX idx_audit_action ON audit_logs(action)"
+    },
+    {
+      "name": "idx_ingest_source",
+      "sql": "CREATE INDEX idx_ingest_source ON ingestion_runs(source_file, started_at DESC)"
+    }
+  ]
+}

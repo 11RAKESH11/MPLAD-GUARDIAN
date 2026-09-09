@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from backend.app.database import query_db
 from backend.app.cache import timed_cache
 
-router = APIRouter(prefix="/api/states", tags=["State & Regional Intelligence"])
+router = APIRouter(prefix="/api/v1/states", tags=["State & Regional Intelligence"])
 
 @router.get("")
 @timed_cache(60.0)

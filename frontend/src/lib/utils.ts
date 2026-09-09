@@ -6,28 +6,29 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatCurrency(amount: number | null | undefined): string {
-  if (amount === null || amount === undefined || isNaN(amount)) return '₹0';
-  const abs = Math.abs(amount);
+export function formatCurrency(amount: number | string | null | undefined): string {
+  if (amount === null || amount === undefined || isNaN(Number(amount))) return '₹0';
+  const num = Number(amount);
+  const abs = Math.abs(num);
   if (abs >= 10000000) {
-    const cr = amount / 10000000;
+    const cr = num / 10000000;
     return `₹${cr.toLocaleString('en-IN', { minimumFractionDigits: cr % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 })} Cr`;
   }
   if (abs >= 100000) {
-    const l = amount / 100000;
+    const l = num / 100000;
     return `₹${l.toLocaleString('en-IN', { minimumFractionDigits: l % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 })} L`;
   }
-  return `₹${amount.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
+  return `₹${num.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
 }
 
-export function formatExactCurrency(amount: number | null | undefined): string {
-  if (amount === null || amount === undefined || isNaN(amount)) return '₹0';
-  return `₹${amount.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
+export function formatExactCurrency(amount: number | string | null | undefined): string {
+  if (amount === null || amount === undefined || isNaN(Number(amount))) return '₹0';
+  return `₹${Number(amount).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
 }
 
-export function formatNumber(val: number | null | undefined): string {
-  if (val === null || val === undefined || isNaN(val)) return '0';
-  return val.toLocaleString('en-IN');
+export function formatNumber(val: number | string | null | undefined): string {
+  if (val === null || val === undefined || isNaN(Number(val))) return '0';
+  return Number(val).toLocaleString('en-IN');
 }
 
 export function formatDate(dateStr: string | null | undefined): string {

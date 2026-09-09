@@ -1,19 +1,38 @@
-FROM python:3.11-slim
+# Multi-stage security-hardened Dockerfile for MPLAD GUARDIAN Backend
+FROM python:3.11-slim as runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    ENVIRONMENT=production
 
 WORKDIR /app
 
-# Install system dependencies
+# Install minimal OS security dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    curl \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements
-COPY ai-service/requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Create dedicated non-root application user and group
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -s /sbin/nologin -d /app appuser
 
-# Copy application source
-COPY . /app
+# Copy and install python dependencies
+COPY ai-service/requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt && \
+    pip install --no-cache-dir psycopg2-binary redis rq sqlalchemy
+
+# Copy source code with non-root ownership
+COPY --chown=appuser:appgroup . /app
+
+# Switch to non-privileged user for runtime execution
+USER appuser:appgroup
 
 EXPOSE 8000
+
+# Health check probe
+HEALTHCHECK --interval=20s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:8000/api/v1/ready || exit 1
 
 CMD ["python", "-m", "uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]

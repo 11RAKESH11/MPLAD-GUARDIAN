@@ -39,7 +39,7 @@ export const AlertsPage: React.FC = () => {
       });
       setAlerts(res.data);
       setSummary(res.summary || {});
-      setPagination(res.pagination);
+      setPagination(res.meta);
     } catch (err) {
       console.error('Failed to load alerts', err);
     } finally {
@@ -319,7 +319,7 @@ export const AlertsPage: React.FC = () => {
         {pagination && pagination.total_pages > 1 && (
           <div className="px-4 py-3 bg-slate-950/60 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
             <span>
-              Showing {(page - 1) * 20 + 1}–{Math.min(page * 20, pagination.total_records)} of {pagination.total_records} signals
+              Showing {(page - 1) * 20 + 1}–{Math.min(page * 20, pagination.total)} of {pagination.total} signals
             </span>
             <div className="flex items-center gap-2">
               <button

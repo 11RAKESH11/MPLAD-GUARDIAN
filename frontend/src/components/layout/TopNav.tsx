@@ -17,7 +17,7 @@ export const TopNav: React.FC<TopNavProps> = ({ onOpenSearch, currentUser, onUse
 
   useEffect(() => {
     api.getAlerts({ status: 'OPEN', limit: 1 }).then((res) => {
-      setUnreadAlerts(res.pagination.total_records);
+      setUnreadAlerts(res.meta.total);
     }).catch(() => {});
   }, []);
 

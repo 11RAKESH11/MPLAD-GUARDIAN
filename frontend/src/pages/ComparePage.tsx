@@ -219,7 +219,7 @@ export const ComparePage: React.FC = () => {
             <div>
               <span className="text-indigo-900/70 text-[10px] uppercase font-mono block">Simulated Additional Completed</span>
               <span className="text-base font-bold font-mono text-emerald-700">
-                +{Math.round(dataA.total_projects * (simCompletionDelta / 100)).toLocaleString()} works
+                +{formatNumber(Math.round((dataA.total_projects || 0) * (simCompletionDelta / 100)))} works
               </span>
             </div>
             <div>

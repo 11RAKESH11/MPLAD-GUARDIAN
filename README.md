@@ -56,6 +56,9 @@ $$\text{RAW DATA} \longrightarrow \text{INTELLIGENCE} \longrightarrow \text{RISK
 |                         │                                                                          |
 |                         ▼                                                                          |
 |  [ Premium Frontend Experience (React + TypeScript + Vite + Tailwind CSS) ]                       |
+|   - Phase 8: National Development Intelligence Cockpit (Pulse, Flow, Trends, Attention Queue)       |
+|   - Phase 7: 7-Tab Evidence Room & Investigation Workspace (Full Lineage & Audit Trail)             |
+|   - Phase 6: India Development GIS Intelligence Experience (PostGIS + MapLibre/Leaflet)             |
 |   - Executive Hero Overview & Dynamic AI Narrative Insight Cards                                   |
 |   - National Risk Command Center with Interactive State/District Drill-down                        |
 |   - AI Risk Explainer ("Why was this project flagged?") with Contributor Bars                      |
@@ -97,11 +100,14 @@ The system is strictly designed as an **objective decision-support and anomaly-d
 | Layer | Technology | Purpose |
 | :--- | :--- | :--- |
 | **Frontend** | React 18, TypeScript, Vite | Ultra-fast, type-safe reactive user interface |
-| **Styling** | Tailwind CSS, Lucide Icons, Glassmorphism | Dark theme design system (`#070B14`, `#0B1120`, `#111827`) |
-| **Data Viz** | Recharts, SVG Gauge, Leaflet | Financial trajectory charts, status rings, interactive maps |
-| **Backend API** | Python, FastAPI, Uvicorn | High-performance asynchronous REST API with Swagger docs |
-| **AI / ML Engine** | Scikit-Learn, NumPy, SciPy, TF-IDF | MAD, Z-score cost anomaly, TF-IDF cosine duplicate detection |
-| **Database** | SQLite + PostgreSQL-compatible schema | Fully indexed relational storage (`mplad.db`) |
+| **Styling** | Vanilla CSS / Tailored Tokens, Lucide Icons | Premium governance design system |
+| **Backend API** | FastAPI, Python 3.11, Uvicorn | High-performance asynchronous API (`/api/v1`) |
+| **Primary Database** | PostgreSQL 15+ & PostGIS | Production relational & spatial data storage with connection pooling |
+| **Fallback Database** | SQLite 3 (WAL mode) | Embedded zero-configuration & zero-downtime rollback fallback |
+| **Caching Layer** | Redis 7 + In-Memory Fallback | Sub-millisecond TTL cache with circuit-breaker degradation |
+| **Background Jobs** | Redis Queue (RQ) + Worker Daemon | Durable asynchronous ML & batch processing queue |
+| **Security & RBAC** | Argon2id, JWT (HMAC-SHA256), OWASP CSP | Enterprise-grade authentication, role-based access & rate limiting |
+| **Orchestration** | Docker, Docker Compose | 6-container isolated bridge network deployment |
 | **Containerization** | Docker, Docker Compose, Nginx | Multi-container reproducible production deployment |
 
 ---

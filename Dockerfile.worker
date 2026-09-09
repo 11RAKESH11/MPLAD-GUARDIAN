@@ -1,0 +1,25 @@
+# Standalone security-hardened Dockerfile for MPLAD GUARDIAN RQ Worker
+FROM python:3.11-slim as runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    ENVIRONMENT=production
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -s /sbin/nologin -d /app appuser
+
+COPY requirements.worker.txt /app/requirements.worker.txt
+RUN pip install --no-cache-dir -r /app/requirements.worker.txt
+
+COPY --chown=appuser:appgroup . /app
+
+USER appuser:appgroup
+
+CMD ["python", "-m", "backend.app.worker"]

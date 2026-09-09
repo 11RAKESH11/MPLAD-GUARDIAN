@@ -3,7 +3,7 @@ from backend.app.database import query_db
 import json
 import math
 
-router = APIRouter(prefix="/api/projects", tags=["Project Intelligence"])
+router = APIRouter(prefix="/api/v1/projects", tags=["Project Intelligence"])
 
 @router.get("")
 def list_projects(
@@ -126,10 +126,10 @@ def list_projects(
     
     return {
         "data": [dict(r) for r in rows],
-        "pagination": {
+        "meta": {
             "page": page,
-            "limit": limit,
-            "total_records": total_records,
+            "page_size": limit,
+            "total": total_records,
             "total_pages": total_pages,
             "has_next": page < total_pages,
             "has_prev": page > 1
@@ -296,6 +296,116 @@ def get_project_lineage(work_code: str):
                 "verified": True
             }
         ]
+    }
+
+@router.get("/{work_code:path}/vouchers")
+def get_project_vouchers(work_code: str):
+    """Returns all expenditure vouchers linked to a canonical project work code."""
+    vouchers = query_db("""
+    SELECT * FROM expenditure_vouchers WHERE work_code = ? ORDER BY expenditure_date DESC
+    """, (work_code,))
+    return {
+        "work_code": work_code,
+        "count": len(vouchers),
+        "vouchers": [dict(v) for v in vouchers]
+    }
+
+@router.get("/{work_code:path}/evidence")
+def get_project_evidence(work_code: str):
+    """Comprehensive evidence dossier for a canonical project."""
+    project = query_db("""
+    SELECT 
+        p.*,
+        r.overall_risk_score, r.risk_level, r.confidence, r.cost_anomaly_score,
+        r.duplicate_score, r.progress_gap_score, r.geographic_score, r.data_quality_score,
+        r.coverage_pct, r.cost_zscore, r.cost_mad_score, r.comparison_group_size,
+        r.explanation_json, r.recommendation, r.model_version, r.calculated_at
+    FROM projects p
+    LEFT JOIN risk_scores r ON p.work_code = r.work_code
+    WHERE p.work_code = ? OR p.id = ?
+    """, (work_code, work_code), one=True)
+    
+    if not project:
+        raise HTTPException(status_code=404, detail="Project record not found")
+        
+    p_dict = dict(project)
+    
+    try:
+        p_dict["raw_data"] = json.loads(p_dict.get("raw_data") or "{}")
+    except:
+        p_dict["raw_data"] = {}
+        
+    try:
+        p_dict["explanation_json"] = json.loads(p_dict.get("explanation_json") or "{}")
+    except:
+        p_dict["explanation_json"] = {}
+
+    # Fetch linked alerts
+    alerts = query_db("SELECT * FROM alerts WHERE work_code = ?", (p_dict["work_code"],))
+
+    # Fetch Comparables
+    comparables = query_db("""
+    SELECT 
+        c.comparable_work_code, c.similarity_score, c.similarity_type, c.reason,
+        p.work_type, p.state, p.district, p.sanctioned_amount, p.status, r.overall_risk_score, r.risk_level
+    FROM comparable_projects c
+    JOIN projects p ON c.comparable_work_code = p.work_code
+    LEFT JOIN risk_scores r ON p.work_code = r.work_code
+    WHERE c.target_work_code = ?
+    ORDER BY c.similarity_score DESC
+    LIMIT 6
+    """, (p_dict["work_code"],))
+    
+    # Fetch Vouchers
+    vouchers = query_db("""
+    SELECT * FROM expenditure_vouchers WHERE work_code = ? ORDER BY expenditure_date DESC LIMIT 15
+    """, (p_dict["work_code"],))
+    
+    # Fetch Audit History
+    audit_history = query_db("""
+    SELECT * FROM audit_logs WHERE target_id = ? ORDER BY created_at DESC LIMIT 10
+    """, (p_dict["work_code"],))
+    
+    # Peer Distribution Calculation
+    category = p_dict.get("category") or ""
+    state = p_dict.get("state") or ""
+    
+    peer_stats = query_db("""
+    SELECT 
+        COUNT(*) as peer_count,
+        AVG(sanctioned_amount) as peer_avg,
+        MIN(sanctioned_amount) as peer_min,
+        MAX(sanctioned_amount) as peer_max
+    FROM projects
+    WHERE category = ? AND state = ? AND sanctioned_amount > 0
+    """, (category, state), one=True)
+    
+    p_stat = dict(peer_stats) if peer_stats else {}
+    
+    checklist = [
+        {"id": "c1", "step": "Review Administrative Approval & Technical Sanction documents for scope changes", "done": False},
+        {"id": "c2", "step": f"Verify estimate alignment with State PWD Schedule of Rates (SOR) in {state}", "done": False},
+        {"id": "c3", "step": "Cross-reference contractor voucher lineage against physically completed measurements", "done": False},
+        {"id": "c4", "step": "Confirm non-duplication with State/Panchayat funded schemes at identical site", "done": False}
+    ]
+
+    return {
+        "project": p_dict,
+        "alerts": [dict(a) for a in alerts],
+        "comparables": [dict(c) for c in comparables],
+        "vouchers": [dict(v) for v in vouchers],
+        "audit_history": [dict(au) for au in audit_history],
+        "peer_benchmark": {
+            "peer_count": p_stat.get("peer_count", 0),
+            "peer_avg_cost": p_stat.get("peer_avg", 0),
+            "peer_min_cost": p_stat.get("peer_min", 0),
+            "peer_max_cost": p_stat.get("peer_max", 0),
+            "current_cost": p_dict.get("sanctioned_amount", 0),
+            "z_score": p_dict.get("cost_zscore", 0),
+            "mad_score": p_dict.get("cost_mad_score", 0)
+        },
+        "recommended_checklist": checklist,
+        "disclaimer": "This analytical dossier synthesizes multi-signal anomaly detection for human investigative support."
     }
 
 @router.get("/{work_code:path}")

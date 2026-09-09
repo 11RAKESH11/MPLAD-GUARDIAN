@@ -9,7 +9,7 @@ import { EvidenceRoomModal } from '../components/explainer/EvidenceRoomModal';
 import { RiskBadge } from '../components/common/RiskBadge';
 import { SourceBadge } from '../components/common/SourceBadge';
 import { CardSkeleton } from '../components/common/LoadingSkeleton';
-import { formatExactCurrency, formatDate } from '../lib/utils';
+import { formatExactCurrency, formatDate, formatNumber } from '../lib/utils';
 import {
   ArrowLeft, Building2, Calendar, CreditCard, Database,
   FileCode2, Receipt, User, Info, GitCommit, CheckCircle2,
@@ -54,8 +54,8 @@ export const ProjectDetailPage: React.FC = () => {
     );
   }
 
-  const baseAmt = project.sanctioned_amount > 0 ? project.sanctioned_amount : project.recommended_amount;
-  const spentAmt = Math.max(project.disbursed_amount, project.expenditure_amount);
+  const baseAmt = (project.sanctioned_amount || 0) > 0 ? project.sanctioned_amount : (project.recommended_amount || 0);
+  const spentAmt = Math.max(project.disbursed_amount || 0, project.expenditure_amount || 0);
   const utilPct = baseAmt > 0 ? Math.min(100, Math.round((spentAmt / baseAmt) * 100)) : 0;
 
   return (
@@ -148,10 +148,10 @@ export const ProjectDetailPage: React.FC = () => {
                 Sanctioned Amount
               </div>
               <div className="text-xl font-bold font-mono text-slate-100">
-                ₹{(project.sanctioned_amount || 0).toLocaleString('en-IN')}
+              ₹{formatNumber(project.sanctioned_amount || 0)}
               </div>
               <div className="text-[11px] text-slate-400 mt-1">
-                Recommended: ₹{(project.recommended_amount || 0).toLocaleString('en-IN')}
+                Recommended: ₹{formatNumber(project.recommended_amount || 0)}
               </div>
             </div>
 
@@ -161,7 +161,7 @@ export const ProjectDetailPage: React.FC = () => {
                 Cumulative Expenditure
               </div>
               <div className="text-xl font-bold font-mono text-emerald-400">
-                ₹{(spentAmt).toLocaleString('en-IN')}
+                ₹{formatNumber(spentAmt)}
               </div>
               <div className="text-[11px] text-slate-400 mt-1">
                 Utilization Rate: <span className="font-bold text-slate-200">{utilPct}%</span>
@@ -242,7 +242,7 @@ export const ProjectDetailPage: React.FC = () => {
                         </span>
                       </td>
                       <td className="py-2.5 px-3 text-right font-mono font-bold text-slate-100">
-                        ₹{(v.disbursed_amount || 0).toLocaleString('en-IN')}
+                        ₹{formatNumber(v.disbursed_amount || 0)}
                       </td>
                     </tr>
                   ))}

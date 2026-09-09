@@ -1,6 +1,6 @@
 import { DashboardOverview, NarrativeInsight, Project, Pagination, StateSummary, MPPortfolio, AlertRecord, DataQualitySummary, User, EvidenceData, RelationshipGraphData, AuditLogRecord } from '../types';
 
-const API_BASE = '/api';
+const API_BASE = '/api/v1';
 
 function getAuthHeader(): HeadersInit {
   const token = localStorage.getItem('mplad_auth_token');
@@ -66,8 +66,43 @@ export const api = {
     return handleResponse(res);
   },
 
+  getDashboardAttention: async (): Promise<{ attention_items: any[] }> => {
+    const res = await fetch(`${API_BASE}/dashboard/attention`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getDashboardFinancialFlow: async (): Promise<any> => {
+    const res = await fetch(`${API_BASE}/dashboard/financial-flow`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getDashboardSignalDistribution: async (): Promise<any> => {
+    const res = await fetch(`${API_BASE}/dashboard/signal-distribution`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getDashboardWhatChanged: async (): Promise<any> => {
+    const res = await fetch(`${API_BASE}/dashboard/what-changed`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getDashboardStateIndicators: async (): Promise<{ states: any[] }> => {
+    const res = await fetch(`${API_BASE}/dashboard/state-indicators`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
   // Projects
-  getProjects: async (params: Record<string, any> = {}): Promise<{ data: Project[]; pagination: Pagination }> => {
+  getProjects: async (params: Record<string, any> = {}): Promise<{ data: Project[]; meta: Pagination }> => {
     const query = new URLSearchParams();
     Object.entries(params).forEach(([key, val]) => {
       if (val !== undefined && val !== null && val !== '') {
@@ -96,6 +131,41 @@ export const api = {
 
   getProjectLineage: async (workCode: string): Promise<any> => {
     const res = await fetch(`${API_BASE}/projects/${encodeURIComponent(workCode)}/lineage`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  // Phase 6 Dedicated Map API
+  getMapSummary: async (): Promise<any> => {
+    const res = await fetch(`${API_BASE}/map/summary`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getMapStates: async (params: Record<string, any> = {}): Promise<{ states: any[]; count: number; disclaimer: string }> => {
+    const query = new URLSearchParams();
+    Object.entries(params).forEach(([key, val]) => {
+      if (val !== undefined && val !== null && val !== '') {
+        query.append(key, String(val));
+      }
+    });
+    const res = await fetch(`${API_BASE}/map/states?${query.toString()}`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getStateIntelligence: async (state: string): Promise<any> => {
+    const res = await fetch(`${API_BASE}/map/state/${encodeURIComponent(state)}`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getDistrictIntelligence: async (state: string, district: string): Promise<any> => {
+    const res = await fetch(`${API_BASE}/map/district/${encodeURIComponent(state)}/${encodeURIComponent(district)}`, {
       headers: getAuthHeader(),
     });
     return handleResponse(res);
@@ -168,7 +238,7 @@ export const api = {
   },
 
   // MPs
-  getMps: async (params: Record<string, any> = {}): Promise<{ data: MPPortfolio[]; pagination: Pagination }> => {
+  getMps: async (params: Record<string, any> = {}): Promise<{ data: MPPortfolio[]; meta: Pagination }> => {
     const query = new URLSearchParams();
     Object.entries(params).forEach(([key, val]) => {
       if (val !== undefined && val !== null && val !== '') {
@@ -189,7 +259,7 @@ export const api = {
   },
 
   // Alerts & Evidence
-  getAlerts: async (params: Record<string, any> = {}): Promise<{ data: AlertRecord[]; summary: any; pagination: Pagination }> => {
+  getAlerts: async (params: Record<string, any> = {}): Promise<{ data: AlertRecord[]; summary: any; meta: Pagination }> => {
     const query = new URLSearchParams();
     Object.entries(params).forEach(([key, val]) => {
       if (val !== undefined && val !== null && val !== '') {
@@ -216,11 +286,41 @@ export const api = {
     return handleResponse(res);
   },
 
+  getProjectEvidence: async (workCode: string): Promise<any> => {
+    const res = await fetch(`${API_BASE}/projects/${encodeURIComponent(workCode)}/evidence`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
+  getProjectVouchers: async (workCode: string): Promise<{ work_code: string; count: number; vouchers: any[] }> => {
+    const res = await fetch(`${API_BASE}/projects/${encodeURIComponent(workCode)}/vouchers`, {
+      headers: getAuthHeader(),
+    });
+    return handleResponse(res);
+  },
+
   updateAlertStatus: async (alertId: string, status: string, resolution_notes: string = '', assigned_to: string = '') => {
     const res = await fetch(`${API_BASE}/alerts/${encodeURIComponent(alertId)}/status`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
       body: JSON.stringify({ status, resolution_notes, assigned_to }),
+    });
+    return handleResponse(res);
+  },
+
+  addAlertNote: async (alertId: string, notes: string) => {
+    const res = await fetch(`${API_BASE}/alerts/${encodeURIComponent(alertId)}/notes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+      body: JSON.stringify({ notes }),
+    });
+    return handleResponse(res);
+  },
+
+  getAlertInvestigationHistory: async (alertId: string): Promise<{ target_id: string; count: number; history: any[] }> => {
+    const res = await fetch(`${API_BASE}/alerts/${encodeURIComponent(alertId)}/history`, {
+      headers: getAuthHeader(),
     });
     return handleResponse(res);
   },
@@ -234,7 +334,7 @@ export const api = {
   },
 
   // Audit Logs
-  getAuditLogs: async (params: Record<string, any> = {}): Promise<{ logs: AuditLogRecord[]; pagination: Pagination }> => {
+  getAuditLogs: async (params: Record<string, any> = {}): Promise<{ logs: AuditLogRecord[]; meta: Pagination }> => {
     const query = new URLSearchParams();
     Object.entries(params).forEach(([key, val]) => {
       if (val !== undefined && val !== null && val !== '') {
