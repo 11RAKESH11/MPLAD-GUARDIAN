@@ -8,8 +8,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 
-# Add project root to sys.path
-sys.path.insert(0, r"c:\SIH_PROJECT")
+# Ensure project root is in sys.path (works cross-platform via relative path resolution)
+_project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 
 # Configure structured application logger
 logging.basicConfig(

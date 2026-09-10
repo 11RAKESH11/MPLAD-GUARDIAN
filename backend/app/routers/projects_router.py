@@ -96,7 +96,8 @@ def list_projects(
     sort_dir = "ASC" if order.lower() == "asc" else "DESC"
     
     if where_sql == "1=1":
-        total_records = 96654
+        count_row = query_db("SELECT COUNT(*) FROM projects", one=True)
+        total_records = count_row[0] if count_row else 0
     elif "r." not in where_sql:
         count_sql = f"SELECT COUNT(*) FROM projects p WHERE {where_sql}"
         total_records = query_db(count_sql, params, one=True)[0]

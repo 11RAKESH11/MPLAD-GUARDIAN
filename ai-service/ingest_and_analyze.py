@@ -17,8 +17,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Ensure UTF-8 output across Windows and POSIX
 sys.stdout.reconfigure(encoding='utf-8')
 
-DATA_DIR = r"c:\SIH_PROJECT\DATA"
-DB_PATH = r"c:\SIH_PROJECT\mplad.db"
+_project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.getenv("DATA_DIR", os.path.join(_project_root, "DATA"))
+DB_PATH = os.getenv("SQLITE_PATH", os.path.join(_project_root, "mplad.db"))
 APP_VERSION = "2.0.0-sih2026"
 SCHEMA_VERSION = "2.1.0"
 

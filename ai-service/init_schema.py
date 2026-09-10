@@ -9,8 +9,9 @@ import math
 from collections import defaultdict, Counter
 import numpy as np
 
-DATA_DIR = r"c:\SIH_PROJECT\DATA"
-DB_PATH = r"c:\SIH_PROJECT\mplad.db"
+_project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.getenv("DATA_DIR", os.path.join(_project_root, "DATA"))
+DB_PATH = os.getenv("SQLITE_PATH", os.path.join(_project_root, "mplad.db"))
 
 def clean_val(val):
     if val is None: return ""

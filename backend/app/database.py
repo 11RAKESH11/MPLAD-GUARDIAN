@@ -35,8 +35,19 @@ DB_POOL_MIN = int(os.getenv("DB_POOL_MIN", "2"))
 DB_POOL_MAX = int(os.getenv("DB_POOL_MAX", "10"))
 DB_CONNECT_TIMEOUT = int(os.getenv("DB_CONNECT_TIMEOUT", "10"))
 
+ENVIRONMENT = os.getenv("ENVIRONMENT", "development").lower()
+IS_PRODUCTION = ENVIRONMENT == "production"
+
 # ─── Engine Detection ────────────────────────────────────────────────────────
 USE_POSTGRES = DATABASE_URL.startswith("postgresql://") or DATABASE_URL.startswith("postgres://")
+
+if IS_PRODUCTION and not USE_POSTGRES:
+    error_msg = (
+        "CRITICAL ARCHITECTURAL ERROR: Production environment requires a valid PostgreSQL DATABASE_URL "
+        "(starting with 'postgresql://' or 'postgres://'). Silent fallback to SQLite is forbidden in production."
+    )
+    logger.critical(error_msg)
+    raise RuntimeError(error_msg)
 
 # ─── PostgreSQL Connection Pool ──────────────────────────────────────────────
 _pg_pool = None
@@ -55,7 +66,10 @@ if USE_POSTGRES:
         )
         logger.info(f"PostgreSQL pool initialized (min={DB_POOL_MIN}, max={DB_POOL_MAX})")
     except Exception as e:
-        logger.error(f"PostgreSQL pool initialization failed: {e}. Falling back to SQLite.")
+        if IS_PRODUCTION:
+            logger.critical(f"FATAL: PostgreSQL pool initialization failed in production: {e}")
+            raise RuntimeError(f"PostgreSQL pool initialization failed in production: {e}") from e
+        logger.error(f"PostgreSQL pool initialization failed: {e}. Falling back to SQLite for local development.")
         USE_POSTGRES = False
         _pg_pool = None
 

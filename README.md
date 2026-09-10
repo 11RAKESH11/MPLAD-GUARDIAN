@@ -114,42 +114,64 @@ The system is strictly designed as an **objective decision-support and anomaly-d
 
 ## 🚀 Quick Start Guide
 
-### Option A: Running via Docker Compose (Recommended)
+### Option A: Running via Docker Compose (Recommended Production Stack)
 
 ```bash
-# 1. Clone the repository and navigate to root
+# 1. Clone repository and navigate to root
 cd SIH_PROJECT
 
-# 2. Build and launch all containerized services
-docker compose up --build
+# 2. Configure environment (copy template)
+cp .env.example .env
+
+# 3. Build and launch all 6 containerized services
+docker compose up -d --build
+
+# 4. Check service health status
+docker compose ps
+
+# 5. Migrate real SQLite data into PostgreSQL
+python scripts/migrate_sqlite_to_postgres.py --live --dsn "postgresql://app_user:app_password@localhost:5432/mplad_db"
+
+# 6. Verify production readiness across all subsystems
+python scripts/verify_production_readiness.py
 ```
-- Frontend UI: `http://localhost:5173`
-- Backend API & Interactive Swagger Docs: `http://localhost:8000/docs`
+- Frontend UI (Nginx): `http://localhost` (Port 80)
+- Backend API (Liveness & Readiness): `http://localhost:8000/api/v1/health` and `/api/v1/ready`
+- Interactive API Docs: `http://localhost:8000/docs` (when `ENABLE_DOCS=true`)
+
+Detailed runbooks:
+- [System Architecture](docs/ARCHITECTURE.md)
+- [Production Deployment Guide](docs/DEPLOYMENT.md)
+- [Database Migration Runbook](docs/DATABASE_MIGRATION.md)
 
 ---
 
-### Option B: Running Locally
+### Option B: Running Locally (Development Mode)
 
-#### 1. Ingest Data & Execute AI Engine
+#### 1. Start Backend API (FastAPI)
 ```bash
-# Execute ingestion across all 12 CSV files (generates mplad.db in ~30 seconds)
-python ai-service/ingest_and_analyze.py
+# Launch FastAPI server on port 8000 (uses SQLite fallback if no DATABASE_URL)
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
-#### 2. Start Backend API
+#### 2. Start AI Microservice
 ```bash
-# Launch FastAPI server on port 8000
-python -m uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+cd ai-service
+python -m uvicorn main:app --host 127.0.0.1 --port 8001 --reload
 ```
 
-#### 3. Start Frontend UI
+#### 3. Start Frontend UI (Vite Dev Server)
 ```bash
-# In a new terminal window
 cd frontend
 npm install
 npm run dev
 ```
 Open `http://localhost:5173` in your browser.
+
+#### 4. Run Test Suite
+```bash
+python -m pytest tests/ -v
+```
 
 ---
 

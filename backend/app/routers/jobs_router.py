@@ -15,9 +15,8 @@ router = APIRouter(prefix="/api/v1/jobs", tags=["Background Jobs & AI Processing
 def _batch_analysis_task(job_id: str):
     """Example heavy AI batch analysis task (idempotent)."""
     from backend.app.queue_service import update_job_progress
-    import time
-
-    total = 96654  # Process all projects
+    count_row = query_db("SELECT COUNT(*) FROM projects", one=True)
+    total = count_row[0] if count_row else 96654  # Process all projects
     batch_size = 5000
     processed = 0
 

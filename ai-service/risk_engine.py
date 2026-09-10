@@ -12,11 +12,18 @@ Synthesizes multi-dimensional signals into explainable, deterministic risk score
 from typing import Dict, Any, List, Optional
 import json
 import datetime
-from .features import extract_project_features
-from .cost_anomaly import CostAnomalyEngine
-from .duplicate_engine import DuplicateEngine
-from .progress_rules import ProgressRuleEngine
-from .geo_intelligence import GeographicIntelligenceEngine
+try:
+    from .features import extract_project_features
+    from .cost_anomaly import CostAnomalyEngine
+    from .duplicate_engine import DuplicateEngine
+    from .progress_rules import ProgressRuleEngine
+    from .geo_intelligence import GeographicIntelligenceEngine
+except (ImportError, ValueError):
+    from features import extract_project_features
+    from cost_anomaly import CostAnomalyEngine
+    from duplicate_engine import DuplicateEngine
+    from progress_rules import ProgressRuleEngine
+    from geo_intelligence import GeographicIntelligenceEngine
 
 MODEL_VERSION = "guardian-risk-2.0.0-shadow"
 ALGORITHM_VERSION = "2.1.0"

@@ -1,36 +1,67 @@
+# ─── Environment & Secrets ───────────────────────────────────────────────────
 .env
 .env.*
 !.env.example
 
-node_modules/
+# ─── Database Files (NEVER commit - safety rule #1/#2) ────────────────────────
+*.db
+*.db.*
+*.sqlite
+*.sqlite3
+backups/
 
-.pytest_cache/
+# ─── Python ──────────────────────────────────────────────────────────────────
 __pycache__/
-*.pyc
-
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
 dist/
 build/
+.venv/
+venv/
+env/
+
+# ─── Node / Frontend ─────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
 .next/
 out/
 
+# ─── Build Artifacts ─────────────────────────────────────────────────────────
+dist/
+build/
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
 logs/
 *.log
 
+# ─── Coverage & Testing ──────────────────────────────────────────────────────
 coverage/
+htmlcov/
+.coverage
 
+# ─── IDE & OS ────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
-
 .DS_Store
 Thumbs.db
 
+# ─── Temporary Files ─────────────────────────────────────────────────────────
 *.tmp
 *.temp
+*.swp
+*.bak
 
+# ─── Data (raw source CSVs - not part of code repo) ──────────────────────────
 DATA/
 
-# Database files
-*.db
-*.db.*
-backups/
-
+# ─── Keys & Credentials ──────────────────────────────────────────────────────
+*.pem
+*.key
+*.cert
+*.crt
+secrets/
+credentials/

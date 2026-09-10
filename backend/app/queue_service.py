@@ -38,8 +38,22 @@ JOB_TIMEOUT = 600  # 10 minutes max per job
 
 
 def _ensure_jobs_table():
-    """Ensure the background_jobs table and all required columns exist (SQLite compat)."""
+    """
+    Ensure the background_jobs table exists.
+    - In PostgreSQL mode: table already created by migration SQL; no ALTER TABLE needed.
+    - In SQLite mode: CREATE TABLE IF NOT EXISTS + safe column additions for compatibility.
+    """
+    from backend.app.database import USE_POSTGRES
     try:
+        if USE_POSTGRES:
+            # PostgreSQL schema is managed by migrations/001_initial_postgres_schema.sql
+            # Do NOT attempt ALTER TABLE — all columns are already defined in the schema.
+            # Just verify table is accessible.
+            from backend.app.database import query_db
+            query_db("SELECT 1 FROM background_jobs LIMIT 1")
+            logger.debug("background_jobs table verified (PostgreSQL mode).")
+            return
+        # SQLite mode: ensure table and all columns exist
         execute_db("""
         CREATE TABLE IF NOT EXISTS background_jobs (
             job_id TEXT PRIMARY KEY,
@@ -57,7 +71,7 @@ def _ensure_jobs_table():
             progress_total INTEGER
         )
         """)
-        # Add any missing columns to existing SQLite table
+        # Safely add any missing columns (SQLite only — idempotent)
         cols_to_add = [
             ("started_at", "TEXT"),
             ("completed_at", "TEXT"),
@@ -69,11 +83,11 @@ def _ensure_jobs_table():
         for col_name, col_type in cols_to_add:
             try:
                 execute_db(f"ALTER TABLE background_jobs ADD COLUMN {col_name} {col_type}")
+                logger.debug(f"Added column {col_name} to background_jobs (SQLite).")
             except Exception:
-                pass # Column already exists
+                pass  # Column already exists — expected and safe
     except Exception as e:
-        logger.warning(f"Jobs table creation skipped: {e}")
-        logger.warning(f"Jobs table creation skipped (may already exist): {e}")
+        logger.warning(f"background_jobs table setup skipped: {e}")
 
 
 _ensure_jobs_table()

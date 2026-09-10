@@ -17,10 +17,14 @@ import numpy as np
 from collections import Counter, defaultdict
 from typing import Dict, Any, List
 
-from .risk_engine import RiskEngine
-from .duplicate_engine import DuplicateEngine
+try:
+    from .risk_engine import RiskEngine
+    from .duplicate_engine import DuplicateEngine
+except (ImportError, ValueError):
+    from risk_engine import RiskEngine
+    from duplicate_engine import DuplicateEngine
 
-SQLITE_PATH = os.getenv("SQLITE_PATH", r"c:\SIH_PROJECT\mplad.db")
+SQLITE_PATH = os.getenv("SQLITE_PATH", os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "mplad.db"))
 
 def run_shadow_evaluation() -> Dict[str, Any]:
     print("=" * 70)
@@ -160,9 +164,10 @@ def run_shadow_evaluation() -> Dict[str, Any]:
 4. **Candidate Blocking Duplicate Detection:** Reduces comparison complexity from $O(N^2)$ to partitioned blocks, completing full candidate analysis in seconds.
 5. **Neutral Decision-Support Lexicon:** 100% compliance with ethical governance terminology ("Requires review", "Statistically unusual", "High-risk signal").
 """
-    with open(r"c:\SIH_PROJECT\PHASE5_MODEL_EVALUATION.md", "w", encoding="utf-8") as f:
+    _output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "PHASE5_MODEL_EVALUATION.md")
+    with open(_output_path, "w", encoding="utf-8") as f:
         f.write(doc)
-    print("\n[OK] Generated PHASE5_MODEL_EVALUATION.md successfully.")
+    print(f"\n[OK] Generated {_output_path} successfully.")
     
     return report
 
