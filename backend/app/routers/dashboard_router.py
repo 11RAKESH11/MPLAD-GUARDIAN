@@ -427,7 +427,7 @@ def get_dashboard_state_indicators():
             "total_projects": tot,
             "total_sanctioned": sanc,
             "total_expenditure": exp,
-            "utilization_rate_pct": round((exp / sanc) * 100, 1),
+            "utilization_rate_pct": round((float(exp) / float(sanc)) * 100, 1),
             "completion_rate_pct": round((comp / tot) * 100, 1),
             "signal_count": alert_map.get(st, 0)
         })
