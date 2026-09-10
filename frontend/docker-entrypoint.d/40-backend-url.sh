@@ -25,5 +25,5 @@ export BACKEND_URL="$TARGET_URL"
 
 echo "[40-backend-url.sh] Configuring Nginx proxy_pass to: ${BACKEND_URL}/api/"
 
-# Substitute $BACKEND_URL into Nginx template
+# Substitute $BACKEND_URL into Nginx configuration
 envsubst '$BACKEND_URL' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf
