@@ -67,15 +67,16 @@ def get_analytics_map_data(
 
         risk_rows = query_db("""
         SELECT 
-            state,
-            SUM(CASE WHEN risk_level = 'CRITICAL' THEN 1 ELSE 0 END) as critical_count,
-            SUM(CASE WHEN risk_level = 'HIGH' THEN 1 ELSE 0 END) as high_count,
-            SUM(CASE WHEN risk_level = 'MEDIUM' THEN 1 ELSE 0 END) as medium_count,
-            SUM(CASE WHEN risk_level = 'LOW' THEN 1 ELSE 0 END) as low_count,
-            AVG(overall_risk_score) as avg_risk_score
-        FROM risk_scores
-        WHERE state != ''
-        GROUP BY state
+            p.state,
+            SUM(CASE WHEN r.risk_level = 'CRITICAL' THEN 1 ELSE 0 END) as critical_count,
+            SUM(CASE WHEN r.risk_level = 'HIGH' THEN 1 ELSE 0 END) as high_count,
+            SUM(CASE WHEN r.risk_level = 'MEDIUM' THEN 1 ELSE 0 END) as medium_count,
+            SUM(CASE WHEN r.risk_level = 'LOW' THEN 1 ELSE 0 END) as low_count,
+            AVG(r.overall_risk_score) as avg_risk_score
+        FROM risk_scores r
+        JOIN projects p ON r.work_code = p.work_code
+        WHERE p.state != ''
+        GROUP BY p.state
         """)
 
         risk_dict = {r["state"]: dict(r) for r in risk_rows}
@@ -91,8 +92,8 @@ def get_analytics_map_data(
             d = dict(r)
             st_name = d["state"]
             cnt = d["project_count"] or 1
-            sanc = d["sanctioned_amount"] or 0.0
-            util = d["utilized_amount"] or 0.0
+            sanc = float(d["sanctioned_amount"] or 0.0)
+            util = float(d["utilized_amount"] or 0.0)
             comp = d["completed_works"] or 0
 
             rk = risk_dict.get(st_name, {})
@@ -211,8 +212,8 @@ def get_analytics_map_data(
     for r in state_rows:
         d = dict(r)
         cnt = d["project_count"] or 1
-        sanc = d["sanctioned_amount"] or 0.0
-        util = d["utilized_amount"] or 0.0
+        sanc = float(d["sanctioned_amount"] or 0.0)
+        util = float(d["utilized_amount"] or 0.0)
         comp = d["completed_works"] or 0
         crit = d["critical_count"] or 0
         high = d["high_count"] or 0

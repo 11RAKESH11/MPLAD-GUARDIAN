@@ -1,0 +1,16 @@
+# Docker build ignore
+mplad.db
+mplad.db.phase1_backup
+*.db
+*.db.*
+backups/
+DATA/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.git/
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

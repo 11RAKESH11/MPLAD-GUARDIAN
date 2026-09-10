@@ -820,7 +820,7 @@ def run_verification(sqlite_path: str, pg_dsn: str):
             pg_cur.execute(f'SELECT {agg} FROM "{table}"')
             tgt_val = pg_cur.fetchone()[0]
             match = "PASS" if src_val and tgt_val and abs(float(src_val) - float(tgt_val)) < 1.0 else "WARN"
-            logger.info(f"  {label}: SQLite={src_val:.2f} PG={float(tgt_val):.2f} → {match}")
+            logger.info(f"  {label}: SQLite={src_val:.2f} PG={float(tgt_val):.2f} -> {match}")
         except Exception as e:
             logger.warning(f"  {label}: {e}")
 
