@@ -38,6 +38,45 @@ from backend.app.routers.analytics_router import router as analytics_router
 from backend.app.routers.jobs_router import router as jobs_router
 from backend.app.routers.map_router import router as map_router
 
+import threading
+
+def _warm_dashboard_cache():
+    """Pre-populate the in-process dashboard cache so first user requests are fast."""
+    import time
+    try:
+        from backend.app.routers.dashboard_router import (
+            get_dashboard_overview,
+            get_dashboard_what_changed,
+            get_dashboard_financial_flow,
+            get_dashboard_signal_distribution,
+            get_dashboard_state_indicators,
+            get_narrative_insights,
+            get_dashboard_trends,
+            get_dashboard_attention,
+        )
+        warm_log = logging.getLogger("mplad.cache_warm")
+        warm_log.info("Dashboard cache warm-up started…")
+        tasks = [
+            ("overview", get_dashboard_overview),
+            ("financial-flow", get_dashboard_financial_flow),
+            ("signal-distribution", get_dashboard_signal_distribution),
+            ("what-changed", get_dashboard_what_changed),
+            ("state-indicators", get_dashboard_state_indicators),
+            ("insights", get_narrative_insights),
+            ("trends", get_dashboard_trends),
+            ("attention", get_dashboard_attention),
+        ]
+        for name, fn in tasks:
+            try:
+                t0 = time.time()
+                fn()
+                warm_log.info(f"  cached /{name} in {time.time()-t0:.2f}s")
+            except Exception as e:
+                warm_log.warning(f"  cache warm skipped /{name}: {e}")
+        warm_log.info("Dashboard cache warm-up complete.")
+    except Exception as e:
+        logging.getLogger("mplad.cache_warm").warning(f"Cache warm-up thread error: {e}")
+
 app = FastAPI(
     title="MPLAD GUARDIAN — Parliamentary Development Intelligence API",
     description="AI-Powered MPLADS Oversight, Anomaly Detection & Risk Monitoring API — Production Hardened",
@@ -46,6 +85,12 @@ app = FastAPI(
     redoc_url="/redoc" if ENABLE_DOCS else None,
     openapi_url="/openapi.json" if ENABLE_DOCS else None
 )
+
+@app.on_event("startup")
+def startup_cache_warm():
+    """Warm the dashboard cache in a background thread on every worker startup."""
+    t = threading.Thread(target=_warm_dashboard_cache, daemon=True)
+    t.start()
 
 # 1. Configured Origin CORS Protection
 allowed_origins_env = os.getenv("ALLOWED_ORIGINS")

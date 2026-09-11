@@ -38,7 +38,7 @@ def _sanitize_dict(d) -> dict:
     return res
 
 @router.get("/overview")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_overview():
     # 1. Core KPIs - Single SQL aggregation scan on projects
     totals = query_db("""
@@ -164,7 +164,7 @@ def get_dashboard_overview():
     }
 
 @router.get("/attention")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_attention():
     """Returns top 5 prioritized items for What Needs Attention, with direct Evidence Room links."""
     alerts = query_db("""
@@ -235,7 +235,7 @@ def get_dashboard_attention():
     return {"attention_items": items}
 
 @router.get("/financial-flow")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_financial_flow():
     """Returns aggregated pipeline stages from Recommended to Sanctioned to Disbursed to Expenditure."""
     totals = query_db("""
@@ -306,7 +306,7 @@ def get_dashboard_financial_flow():
     }
 
 @router.get("/signal-distribution")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_signal_distribution():
     """Returns clean distribution of analytical signals, risk levels, and confidence tiers."""
     # 1. Alert type counts
@@ -369,7 +369,7 @@ def get_dashboard_signal_distribution():
     }
 
 @router.get("/what-changed")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_what_changed():
     """Calculates year-over-year changes between the two most recent complete financial years."""
     fy_rows = query_db("""
@@ -445,7 +445,7 @@ def get_dashboard_what_changed():
         }
 
 @router.get("/state-indicators")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_state_indicators():
     """Returns clean state-level indicators for executive comparison."""
     states_data = query_db("""
@@ -493,7 +493,7 @@ def get_dashboard_state_indicators():
     return {"states": results}
 
 @router.get("/insights")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_narrative_insights():
     # Dynamic narrative cards generated directly from real data queries
     top_cost_districts = query_db("""
@@ -578,7 +578,7 @@ def get_narrative_insights():
     return {"insights": insights}
 
 @router.get("/trends")
-@timed_cache(60.0)
+@timed_cache(300.0)
 def get_dashboard_trends():
     # 1. By Financial Year
     fy_trends = query_db("""
