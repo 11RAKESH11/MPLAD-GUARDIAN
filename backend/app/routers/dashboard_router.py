@@ -1,14 +1,46 @@
 from fastapi import APIRouter
 from backend.app.database import query_db
 from backend.app.cache import timed_cache
+from decimal import Decimal
 import json
 
 router = APIRouter(prefix="/api/v1/dashboard", tags=["Executive Dashboard"])
 
+def _to_float(val, default: float = 0.0) -> float:
+    if val is None:
+        return default
+    if isinstance(val, (int, float, Decimal)):
+        return float(val)
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+def _to_int(val, default: int = 0) -> int:
+    if val is None:
+        return default
+    if isinstance(val, (int, float, Decimal)):
+        return int(val)
+    try:
+        return int(val)
+    except (ValueError, TypeError):
+        return default
+
+def _sanitize_dict(d) -> dict:
+    if not isinstance(d, dict):
+        d = dict(d)
+    res = {}
+    for k, v in d.items():
+        if isinstance(v, Decimal):
+            res[k] = float(v)
+        else:
+            res[k] = v
+    return res
+
 @router.get("/overview")
 @timed_cache(60.0)
 def get_dashboard_overview():
-    # 1. Core KPIs
+    # 1. Core KPIs - Single SQL aggregation scan on projects
     totals = query_db("""
     SELECT 
         COUNT(*) as total_projects,
@@ -48,7 +80,7 @@ def get_dashboard_overview():
 
     # Comparable duplicates count
     dup_count_row = query_db("SELECT COUNT(*) as dup_count FROM comparable_projects", one=True)
-    duplicates_count = dup_count_row["dup_count"] if dup_count_row else 0
+    duplicates_count = _to_int(dup_count_row["dup_count"]) if dup_count_row else 0
     
     # 4. MP count & limits
     mp_stats = query_db("""
@@ -67,46 +99,61 @@ def get_dashboard_overview():
     FROM expenditure_vouchers
     """, one=True)
     
-    # 6. Data Quality Completeness Calculation
-    t_dict = dict(totals)
-    total_proj = t_dict["total_projects"] or 1
-    missing_dist = t_dict.get("missing_dist") or 0
+    # 6. Safe decimal/float Data Quality & Utilization Calculation
+    t_dict = dict(totals) if totals else {}
+    total_proj = _to_int(t_dict.get("total_projects"), 1) or 1
+    missing_dist = _to_int(t_dict.get("missing_dist"), 0)
     completeness_pct = round(((total_proj * 6 - missing_dist) / (total_proj * 6)) * 100, 2)
 
-    sanc_amt = t_dict["total_sanctioned_funds"] or 1.0
-    spent_amt = max(t_dict["total_disbursed_funds"] or 0, t_dict["total_expenditure_funds"] or 0)
-    utilization_rate = round((spent_amt / sanc_amt) * 100, 2)
-    completion_rate = round(((t_dict["completed_works"] or 0) / total_proj) * 100, 2)
+    total_rec = _to_float(t_dict.get("total_recommended_funds"))
+    sanc_amt = _to_float(t_dict.get("total_sanctioned_funds"))
+    disb_amt = _to_float(t_dict.get("total_disbursed_funds"))
+    exp_amt = _to_float(t_dict.get("total_expenditure_funds"))
+
+    sanc_for_calc = sanc_amt if sanc_amt > 0 else 1.0
+    spent_amt = max(disb_amt, exp_amt)
+    utilization_rate = round((spent_amt / sanc_for_calc) * 100, 2)
+    
+    comp_works = _to_int(t_dict.get("completed_works"))
+    sanc_works = _to_int(t_dict.get("sanctioned_works"))
+    insp_works = _to_int(t_dict.get("inspection_works"))
+    vend_works = _to_int(t_dict.get("vendor_id_works"))
+    completion_rate = round((comp_works / total_proj) * 100, 2)
+
+    r_dict = dict(risk_summary) if risk_summary else {}
+    a_dict = dict(alert_counts) if alert_counts else {}
+    m_dict = dict(mp_stats) if mp_stats else {}
+    v_dict = dict(voucher_stats) if voucher_stats else {}
     
     return {
         "kpis": {
-            "total_projects": t_dict["total_projects"],
-            "total_sanctioned_funds": t_dict["total_sanctioned_funds"],
-            "total_recommended_funds": t_dict["total_recommended_funds"],
-            "total_expenditure_funds": t_dict["total_expenditure_funds"],
-            "total_disbursed_funds": t_dict["total_disbursed_funds"],
+            "total_projects": total_proj,
+            "total_sanctioned_funds": sanc_amt,
+            "total_recommended_funds": total_rec,
+            "total_expenditure_funds": exp_amt,
+            "total_disbursed_funds": disb_amt,
             "utilization_rate_pct": utilization_rate,
             "completion_rate_pct": completion_rate,
-            "completed_works": t_dict["completed_works"],
-            "sanctioned_works": t_dict["sanctioned_works"],
-            "inspection_works": t_dict["inspection_works"],
-            "vendor_id_works": t_dict["vendor_id_works"],
-            "total_mps": mp_stats["total_mps"],
-            "total_vouchers": voucher_stats["total_vouchers"] if voucher_stats else 0,
-            "total_unique_vendors": voucher_stats["total_unique_vendors"] if voucher_stats else 0,
+            "completed_works": comp_works,
+            "sanctioned_works": sanc_works,
+            "inspection_works": insp_works,
+            "vendor_id_works": vend_works,
+            "total_mps": _to_int(m_dict.get("total_mps")),
+            "total_vouchers": _to_int(v_dict.get("total_vouchers")),
+            "total_unique_vendors": _to_int(v_dict.get("total_unique_vendors")),
             "source_badge": "REAL CSV DATA"
         },
         "risk_metrics": {
-            "critical_count": risk_summary["critical_count"],
-            "high_count": risk_summary["high_count"],
-            "medium_count": risk_summary["medium_count"],
-            "low_count": risk_summary["low_count"],
+            "critical_count": _to_int(r_dict.get("critical_count")),
+            "high_count": _to_int(r_dict.get("high_count")),
+            "medium_count": _to_int(r_dict.get("medium_count")),
+            "low_count": _to_int(r_dict.get("low_count")),
             "potential_duplicates_count": duplicates_count,
-            "avg_risk_score": round(risk_summary["avg_risk_score"] or 0, 1),
-            "avg_confidence": round(risk_summary["avg_confidence"] or 0, 1),
+            "avg_risk_score": round(_to_float(r_dict.get("avg_risk_score")), 1),
+            "avg_confidence": round(_to_float(r_dict.get("avg_confidence")), 1),
             "source_badge": "AI ANALYSIS"
         },
-        "alerts_summary": dict(alert_counts),
+        "alerts_summary": _sanitize_dict(a_dict),
         "data_health": {
             "completeness_pct": completeness_pct,
             "source_files_count": 12,
@@ -151,13 +198,14 @@ def get_dashboard_attention():
     items = []
     for row in alerts:
         r = dict(row)
+        confidence_val = _to_float(r.get("confidence"), 95.0)
         # Determine clean signal type label
         if r.get("alert_type") == "COST_OUTLIER":
             signal_label = "High Cost Anomaly"
-            why_prioritized = f"Project cost exceeds statistical baseline by >2.5σ with {round(r.get('confidence') or 95)}% confidence."
+            why_prioritized = f"Project cost exceeds statistical baseline by >2.5σ with {round(confidence_val)}% confidence."
         elif r.get("alert_type") == "POTENTIAL_DUPLICATE":
             signal_label = "Potential Duplicate Work"
-            why_prioritized = f"High textual similarity (>70%) with proximate project in {r.get('district', '').title()}."
+            why_prioritized = f"High textual similarity (>70%) with proximate project in {(r.get('district') or '').title()}."
         elif r.get("alert_type") == "PROGRESS_GAP":
             signal_label = "Progress Discrepancy"
             why_prioritized = "Significant fund disbursement recorded while physical execution remains in preliminary status."
@@ -170,15 +218,15 @@ def get_dashboard_attention():
             "work_code": r["work_code"],
             "signal_type": signal_label,
             "raw_signal_type": r.get("alert_type"),
-            "title": r.get("title") or f"{signal_label} in {r.get('district', '').title()}",
+            "title": r.get("title") or f"{signal_label} in {(r.get('district') or '').title()}",
             "severity": r.get("severity") or "HIGH",
             "state": r.get("state") or "",
             "district": (r.get("district") or "").title(),
             "category": r.get("category") or "Developmental Asset",
-            "sanctioned_amount": r.get("sanctioned_amount") or 0,
-            "risk_score": round(r.get("overall_risk_score") or 0, 1),
-            "confidence": round(r.get("confidence") or 0, 1),
-            "priority_score": round(r.get("priority_score") or 0, 1),
+            "sanctioned_amount": _to_float(r.get("sanctioned_amount")),
+            "risk_score": round(_to_float(r.get("overall_risk_score")), 1),
+            "confidence": round(confidence_val, 1),
+            "priority_score": round(_to_float(r.get("priority_score")), 1),
             "evidence_snippet": r.get("evidence") or why_prioritized,
             "why_prioritized": why_prioritized,
             "status": r.get("status") or "OPEN"
@@ -202,12 +250,14 @@ def get_dashboard_financial_flow():
     FROM projects
     """, one=True)
     
-    t = dict(totals)
-    sanc = t.get("sanctioned_amount") or 1.0
-    rec = t.get("recommended_amount") or 0.0
-    disb = t.get("disbursed_amount") or 0.0
-    exp = t.get("expenditure_amount") or 0.0
-    total_proj = t.get("total_projects") or 1
+    t = dict(totals) if totals else {}
+    sanc = _to_float(t.get("sanctioned_amount"))
+    rec = _to_float(t.get("recommended_amount"))
+    disb = _to_float(t.get("disbursed_amount"))
+    exp = _to_float(t.get("expenditure_amount"))
+    total_proj = _to_int(t.get("total_projects"), 1) or 1
+    
+    sanc_for_calc = sanc if sanc > 0 else 1.0
     
     stages = [
         {
@@ -215,7 +265,7 @@ def get_dashboard_financial_flow():
             "name": "Recommended by MPs",
             "amount": rec,
             "records_count": total_proj,
-            "percentage_of_sanctioned": round((rec / sanc) * 100, 1) if sanc else 0,
+            "percentage_of_sanctioned": round((rec / sanc_for_calc) * 100, 1) if sanc else 0,
             "description": "Total initial proposals submitted under MPLADS guidelines.",
             "source": "MP Recommendations (Portal records)"
         },
@@ -232,8 +282,8 @@ def get_dashboard_financial_flow():
             "id": "disbursed",
             "name": "Released / Disbursed",
             "amount": disb,
-            "records_count": t.get("disbursed_count") or 0,
-            "percentage_of_sanctioned": round((disb / sanc) * 100, 1) if sanc else 0,
+            "records_count": _to_int(t.get("disbursed_count")),
+            "percentage_of_sanctioned": round((disb / sanc_for_calc) * 100, 1) if sanc else 0,
             "description": "Funds released from nodal account to implementing agencies (IDAs).",
             "source": "Nodal Bank Release Ledgers"
         },
@@ -241,8 +291,8 @@ def get_dashboard_financial_flow():
             "id": "expenditure",
             "name": "Expenditure / Utilized",
             "amount": exp,
-            "records_count": t.get("expenditure_count") or 0,
-            "percentage_of_sanctioned": round((exp / sanc) * 100, 1) if sanc else 0,
+            "records_count": _to_int(t.get("expenditure_count")),
+            "percentage_of_sanctioned": round((exp / sanc_for_calc) * 100, 1) if sanc else 0,
             "description": "Actual expenditure documented against completed or in-progress works.",
             "source": "Expenditure Vouchers & Utilization Certificates"
         }
@@ -252,7 +302,7 @@ def get_dashboard_financial_flow():
         "stages": stages,
         "total_sanctioned": sanc,
         "total_expenditure": exp,
-        "utilization_rate_pct": round((exp / sanc) * 100, 2) if sanc else 0
+        "utilization_rate_pct": round((exp / sanc_for_calc) * 100, 2) if sanc else 0
     }
 
 @router.get("/signal-distribution")
@@ -282,15 +332,15 @@ def get_dashboard_signal_distribution():
     
     rc_dict = dict(risk_and_conf_dist) if risk_and_conf_dist else {}
     risk_dist = {
-        "critical": rc_dict.get("critical", 0),
-        "high": rc_dict.get("high", 0),
-        "medium": rc_dict.get("medium", 0),
-        "low": rc_dict.get("low", 0)
+        "critical": _to_int(rc_dict.get("critical")),
+        "high": _to_int(rc_dict.get("high")),
+        "medium": _to_int(rc_dict.get("medium")),
+        "low": _to_int(rc_dict.get("low"))
     }
     confidence_dist = {
-        "high_confidence": rc_dict.get("high_confidence", 0),
-        "moderate_confidence": rc_dict.get("moderate_confidence", 0),
-        "limited_evidence": rc_dict.get("limited_evidence", 0)
+        "high_confidence": _to_int(rc_dict.get("high_confidence")),
+        "moderate_confidence": _to_int(rc_dict.get("moderate_confidence")),
+        "limited_evidence": _to_int(rc_dict.get("limited_evidence"))
     }
     
     type_map = {
@@ -302,12 +352,12 @@ def get_dashboard_signal_distribution():
     signals = []
     for r in alert_types:
         row = dict(r)
-        at = row["alert_type"]
+        at = row.get("alert_type") or "UNKNOWN"
         signals.append({
             "type_key": at,
             "label": type_map.get(at, at.replace("_", " ").title()),
-            "count": row["count"],
-            "critical_count": row["critical_count"]
+            "count": _to_int(row.get("count")),
+            "critical_count": _to_int(row.get("critical_count"))
         })
         
     return {
@@ -342,13 +392,12 @@ def get_dashboard_what_changed():
         c = data["2025-2026"]
         
         def calc_pct(cur, prev):
-            if not prev or prev == 0:
+            cur_f = _to_float(cur)
+            prev_f = _to_float(prev)
+            if not prev_f or prev_f == 0:
                 return 0.0
-            return round(((cur - prev) / prev) * 100, 1)
+            return round(((cur_f - prev_f) / prev_f) * 100, 1)
             
-        p_util = round(((p["expenditure"] or 0) / (p["sanctioned"] or 1)) * 100, 1)
-        c_util = round(((c["expenditure"] or 0) / (c["sanctioned"] or 1)) * 100, 1)
-        
         return {
             "historical_comparison_available": True,
             "current_period": "FY 2025-26",
@@ -357,33 +406,33 @@ def get_dashboard_what_changed():
             "metrics": [
                 {
                     "name": "Project Volume",
-                    "current": c["projects"],
-                    "previous": p["projects"],
-                    "diff_pct": calc_pct(c["projects"], p["projects"]),
+                    "current": _to_int(c.get("projects")),
+                    "previous": _to_int(p.get("projects")),
+                    "diff_pct": calc_pct(c.get("projects"), p.get("projects")),
                     "explanation": "Substantial expansion in registered development projects.",
                     "neutral_note": "Driven by broader implementation across states."
                 },
                 {
                     "name": "Sanctioned Allocation",
-                    "current": c["sanctioned"],
-                    "previous": p["sanctioned"],
-                    "diff_pct": calc_pct(c["sanctioned"], p["sanctioned"]),
+                    "current": _to_float(c.get("sanctioned")),
+                    "previous": _to_float(p.get("sanctioned")),
+                    "diff_pct": calc_pct(c.get("sanctioned"), p.get("sanctioned")),
                     "explanation": "Higher total budget allocations across sanctioned works.",
                     "neutral_note": "Reflects updated annual fund releases."
                 },
                 {
                     "name": "Recorded Expenditure",
-                    "current": c["expenditure"],
-                    "previous": p["expenditure"],
-                    "diff_pct": calc_pct(c["expenditure"], p["expenditure"]),
+                    "current": _to_float(c.get("expenditure")),
+                    "previous": _to_float(p.get("expenditure")),
+                    "diff_pct": calc_pct(c.get("expenditure"), p.get("expenditure")),
                     "explanation": "Active disbursement on multi-year development projects.",
                     "neutral_note": "Expenditure ledgers reflect progressing works."
                 },
                 {
                     "name": "Completed Works",
-                    "current": c["completed"],
-                    "previous": p["completed"],
-                    "diff_pct": calc_pct(c["completed"], p["completed"]),
+                    "current": _to_int(c.get("completed")),
+                    "previous": _to_int(p.get("completed")),
+                    "diff_pct": calc_pct(c.get("completed"), p.get("completed")),
                     "explanation": "Number of assets with recorded completion certificates.",
                     "neutral_note": "Many recently sanctioned works remain in execution phase."
                 }
@@ -418,15 +467,17 @@ def get_dashboard_state_indicators():
     WHERE state IS NOT NULL AND state != ''
     GROUP BY state
     """)
-    alert_map = {r["state"]: r["signal_count"] for r in alert_state_counts}
+    alert_map = {r["state"]: _to_int(r["signal_count"]) for r in alert_state_counts}
     
     results = []
     for row in states_data:
         r = dict(row)
-        sanc = r.get("total_sanctioned") or 1.0
-        exp = r.get("total_expenditure") or 0.0
-        tot = r.get("total_projects") or 1
-        comp = r.get("completed_works") or 0
+        sanc = _to_float(r.get("total_sanctioned"), 1.0)
+        sanc_for_calc = sanc if sanc > 0 else 1.0
+        exp = _to_float(r.get("total_expenditure"))
+        tot = _to_int(r.get("total_projects"), 1)
+        tot_for_calc = tot if tot > 0 else 1
+        comp = _to_int(r.get("completed_works"))
         st = r["state"]
         
         results.append({
@@ -434,8 +485,8 @@ def get_dashboard_state_indicators():
             "total_projects": tot,
             "total_sanctioned": sanc,
             "total_expenditure": exp,
-            "utilization_rate_pct": round((float(exp) / float(sanc)) * 100, 1),
-            "completion_rate_pct": round((comp / tot) * 100, 1),
+            "utilization_rate_pct": round((exp / sanc_for_calc) * 100, 1),
+            "completion_rate_pct": round((comp / tot_for_calc) * 100, 1),
             "signal_count": alert_map.get(st, 0)
         })
         
@@ -475,42 +526,50 @@ def get_narrative_insights():
     insights = []
     
     if top_cost_districts:
-        d0 = top_cost_districts[0]
+        d0 = dict(top_cost_districts[0])
+        flag_count = _to_int(d0.get('flag_count'))
+        tot_amt = _to_float(d0.get('total_amt'))
+        dist_name = (d0.get('district') or '').title()
         insights.append({
             "id": "INS-COST-01",
             "type": "COST_ANOMALY",
-            "title": f"Cost Outlier Concentration in {d0['district'].title()}, {d0['state']}",
-            "summary": f"{d0['flag_count']} works exhibit sanctioned amounts significantly above statistical baselines (+2.5σ) within this district.",
-            "impact": f"₹{d0['total_amt']:,.0f} sanctioned across flagged projects.",
+            "title": f"Cost Outlier Concentration in {dist_name}, {d0.get('state')}",
+            "summary": f"{flag_count} works exhibit sanctioned amounts significantly above statistical baselines (+2.5σ) within this district.",
+            "impact": f"₹{tot_amt:,.0f} sanctioned across flagged projects.",
             "action": "Inspect comparable work types in Evidence Room.",
-            "filter_state": d0['state'],
-            "filter_district": d0['district'],
+            "filter_state": d0.get('state'),
+            "filter_district": d0.get('district'),
             "severity": "HIGH",
             "badge": "STATISTICAL BASELINE"
         })
         
     if top_dup_districts:
-        dup0 = top_dup_districts[0]
+        dup0 = dict(top_dup_districts[0])
+        dup_count = _to_int(dup0.get('dup_count'))
+        dist_name = (dup0.get('district') or '').title()
         insights.append({
             "id": "INS-DUP-01",
             "type": "POSSIBLE_DUPLICATE",
-            "title": f"Work Description Overlap in {dup0['district'].title()}",
-            "summary": f"{dup0['dup_count']} works exhibit >=70% semantic description similarity with proximate proposals in the same jurisdiction.",
+            "title": f"Work Description Overlap in {dist_name}",
+            "summary": f"{dup_count} works exhibit >=70% semantic description similarity with proximate proposals in the same jurisdiction.",
             "impact": "Potential redundant sanctioning of similar developmental assets.",
             "action": "Review duplicate comparison matrix.",
-            "filter_state": dup0['state'],
-            "filter_district": dup0['district'],
+            "filter_state": dup0.get('state'),
+            "filter_district": dup0.get('district'),
             "severity": "MEDIUM",
             "badge": "SEMANTIC DETECTION"
         })
         
-    if progress_gap_stats and progress_gap_stats["count"] > 0:
+    pg_dict = dict(progress_gap_stats) if progress_gap_stats else {}
+    pg_count = _to_int(pg_dict.get("count"))
+    if pg_count > 0:
+        pg_amt = _to_float(pg_dict.get("amt"))
         insights.append({
             "id": "INS-PROG-01",
             "type": "PROGRESS_GAP",
-            "title": f"{progress_gap_stats['count']:,} Works with High Utilization Pending Physical Completion",
+            "title": f"{pg_count:,} Works with High Utilization Pending Physical Completion",
             "summary": "Substantial funds (>90%) disbursed to contractors, yet works remain recorded in 'Physical Inspection' or 'Sanction' status.",
-            "impact": f"₹{progress_gap_stats['amt']:,.0f} in active pipeline disbursements.",
+            "impact": f"₹{pg_amt:,.0f} in active pipeline disbursements.",
             "action": "Request updated physical verification certificate from IDAs.",
             "severity": "HIGH",
             "badge": "OPERATIONAL GAP"
@@ -554,7 +613,7 @@ def get_dashboard_trends():
     """)
     
     return {
-        "financial_year_trends": [dict(r) for r in fy_trends],
-        "status_distribution": [dict(r) for r in status_breakdown],
-        "category_distribution": [dict(r) for r in category_breakdown]
+        "financial_year_trends": [_sanitize_dict(r) for r in fy_trends],
+        "status_distribution": [_sanitize_dict(r) for r in status_breakdown],
+        "category_distribution": [_sanitize_dict(r) for r in category_breakdown]
     }
