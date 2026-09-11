@@ -1,7 +1,26 @@
 from fastapi import APIRouter, HTTPException, Query
 from backend.app.database import query_db
+from backend.app.cache import timed_cache
 import json
 import math
+from decimal import Decimal
+
+def _f(v, default=0.0):
+    """Safe float from PostgreSQL Decimal/None."""
+    if v is None:
+        return default
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return default
+
+def _sanitize_row(d: dict) -> dict:
+    """Convert any Decimal values in a row dict to float for JSON safety."""
+    out = {}
+    for k, v in d.items():
+        out[k] = float(v) if isinstance(v, Decimal) else v
+    return out
+
 
 router = APIRouter(prefix="/api/v1/projects", tags=["Project Intelligence"])
 
@@ -24,65 +43,65 @@ def list_projects(
     limit: int = Query(25, ge=1, le=100)
 ):
     offset = (page - 1) * limit
-    
+
     where_clauses = ["1=1"]
     params = []
-    
+
     if q.strip():
         search_term = f"%{q.strip()}%"
         where_clauses.append("""(
-            p.work_code LIKE ? OR 
-            p.work_type LIKE ? OR 
-            p.description LIKE ? OR 
-            p.mp_name LIKE ? OR 
-            p.district LIKE ? OR 
-            p.constituency LIKE ? OR 
+            p.work_code LIKE ? OR
+            p.work_type LIKE ? OR
+            p.description LIKE ? OR
+            p.mp_name LIKE ? OR
+            p.district LIKE ? OR
+            p.constituency LIKE ? OR
             p.state LIKE ?
         )""")
         params.extend([search_term] * 7)
-        
+
     if state.strip():
         where_clauses.append("p.state = ?")
         params.append(state.strip())
-        
+
     if district.strip():
         where_clauses.append("p.district = ?")
         params.append(district.strip())
-        
+
     if constituency.strip():
         where_clauses.append("p.constituency = ?")
         params.append(constituency.strip())
-        
+
     if category.strip():
         where_clauses.append("p.category = ?")
         params.append(category.strip())
-        
+
     if financial_year.strip():
         where_clauses.append("p.financial_year = ?")
         params.append(financial_year.strip())
-        
+
     if status.strip():
         where_clauses.append("p.status = ?")
         params.append(status.strip())
-        
+
     if risk_level.strip():
         where_clauses.append("r.risk_level = ?")
         params.append(risk_level.strip().upper())
-        
+
     if house.strip():
         where_clauses.append("p.house = ?")
         params.append(house.strip().upper())
-        
+
     if min_amount is not None:
         where_clauses.append("p.sanctioned_amount >= ?")
         params.append(min_amount)
-        
+
     if max_amount is not None:
         where_clauses.append("p.sanctioned_amount <= ?")
         params.append(max_amount)
-        
+
     where_sql = " AND ".join(where_clauses)
-    
+
     valid_sorts = {
         "overall_risk_score": "r.overall_risk_score",
         "sanctioned_amount": "p.sanctioned_amount",
@@ -94,19 +113,24 @@ def list_projects(
     }
     sort_col = valid_sorts.get(sort_by, "r.overall_risk_score")
     sort_dir = "ASC" if order.lower() == "asc" else "DESC"
-    
+    nulls_order = "NULLS LAST" if sort_dir == "DESC" else "NULLS FIRST"
+
+    needs_risk_join = "r." in where_sql or "r." in sort_col
+    join_clause = "LEFT JOIN risk_scores r ON p.work_code = r.work_code"
+
+    # Count query — use fast COUNT(*) without joining when possible
     if where_sql == "1=1":
         count_row = query_db("SELECT COUNT(*) FROM projects", one=True)
-        total_records = count_row[0] if count_row else 0
-    elif "r." not in where_sql:
+        total_records = int(count_row[0]) if count_row else 0
+    elif not needs_risk_join:
         count_sql = f"SELECT COUNT(*) FROM projects p WHERE {where_sql}"
-        total_records = query_db(count_sql, params, one=True)[0]
+        total_records = int(query_db(count_sql, params, one=True)[0])
     else:
-        count_sql = f"SELECT COUNT(*) FROM projects p JOIN risk_scores r ON p.work_code = r.work_code WHERE {where_sql}"
-        total_records = query_db(count_sql, params, one=True)[0]
-    
+        count_sql = f"SELECT COUNT(*) FROM projects p {join_clause} WHERE {where_sql}"
+        total_records = int(query_db(count_sql, params, one=True)[0])
+
     records_sql = f"""
-    SELECT 
+    SELECT
         p.id, p.work_code, p.house, p.mp_code, p.mp_name, p.mp_type, p.state, p.district,
         p.constituency, p.ida_name, p.category, p.work_type, p.description, p.status,
         p.recommended_date, p.sanction_date, p.completion_date, p.financial_year,
@@ -115,18 +139,18 @@ def list_projects(
         r.overall_risk_score, r.risk_level, r.confidence, r.cost_anomaly_score,
         r.duplicate_score, r.progress_gap_score, r.geographic_score, r.recommendation
     FROM projects p
-    LEFT JOIN risk_scores r ON p.work_code = r.work_code
+    {join_clause}
     WHERE {where_sql}
-    ORDER BY {sort_col} {sort_dir}
+    ORDER BY {sort_col} {sort_dir} {nulls_order}
     LIMIT ? OFFSET ?
     """
     page_params = params + [limit, offset]
     rows = query_db(records_sql, page_params)
-    
+
     total_pages = math.ceil(total_records / limit) if total_records > 0 else 1
-    
+
     return {
-        "data": [dict(r) for r in rows],
+        "data": [_sanitize_row(dict(r)) for r in rows],
         "meta": {
             "page": page,
             "page_size": limit,
