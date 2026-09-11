@@ -237,18 +237,24 @@ CREATE INDEX IF NOT EXISTS idx_projects_mp_name ON projects(mp_name);
 CREATE INDEX IF NOT EXISTS idx_projects_state_district ON projects(state, district);
 CREATE INDEX IF NOT EXISTS idx_projects_work_code ON projects(work_code);
 CREATE INDEX IF NOT EXISTS idx_projects_sanction_date ON projects(sanction_date DESC);
+CREATE INDEX IF NOT EXISTS idx_projects_fy_covering ON projects(financial_year, sanctioned_amount, expenditure_amount, status);
+CREATE INDEX IF NOT EXISTS idx_projects_state_covering ON projects(state, sanctioned_amount, expenditure_amount, status);
+CREATE INDEX IF NOT EXISTS idx_projects_financial_covering ON projects(recommended_amount, sanctioned_amount, disbursed_amount, expenditure_amount);
 
 -- Risk Scores Indexes
+CREATE INDEX IF NOT EXISTS idx_risk_scores_work_code ON risk_scores(work_code);
 CREATE INDEX IF NOT EXISTS idx_risk_scores_state ON risk_scores(state);
 CREATE INDEX IF NOT EXISTS idx_risk_scores_district ON risk_scores(district);
 CREATE INDEX IF NOT EXISTS idx_risk_scores_level ON risk_scores(risk_level);
 CREATE INDEX IF NOT EXISTS idx_risk_scores_overall ON risk_scores(overall_risk_score DESC);
 CREATE INDEX IF NOT EXISTS idx_risk_scores_cost_anomaly ON risk_scores(cost_anomaly_score DESC);
 CREATE INDEX IF NOT EXISTS idx_risk_scores_duplicate ON risk_scores(duplicate_score DESC);
+CREATE INDEX IF NOT EXISTS idx_risk_scores_level_conf ON risk_scores(risk_level, confidence);
 
 -- Expenditure Vouchers Indexes
 CREATE INDEX IF NOT EXISTS idx_vouchers_work_code ON expenditure_vouchers(work_code);
 CREATE INDEX IF NOT EXISTS idx_vouchers_date ON expenditure_vouchers(expenditure_date DESC);
+CREATE INDEX IF NOT EXISTS idx_vouchers_vendor_name ON expenditure_vouchers(vendor_name);
 
 -- Comparable Projects Indexes
 CREATE INDEX IF NOT EXISTS idx_comparable_target ON comparable_projects(target_work_code);
@@ -263,6 +269,7 @@ CREATE INDEX IF NOT EXISTS idx_alerts_type ON alerts(alert_type);
 CREATE INDEX IF NOT EXISTS idx_alerts_state ON alerts(state);
 CREATE INDEX IF NOT EXISTS idx_alerts_district ON alerts(district);
 CREATE INDEX IF NOT EXISTS idx_alerts_priority ON alerts(priority_score DESC);
+CREATE INDEX IF NOT EXISTS idx_alerts_status_priority ON alerts(status, priority_score DESC);
 
 -- Audit Logs Indexes
 CREATE INDEX IF NOT EXISTS idx_audit_logs_target ON audit_logs(target_id);

@@ -25,7 +25,14 @@ indices = [
     ("idx_proj_category", "CREATE INDEX IF NOT EXISTS idx_proj_category ON projects(category);"),
     ("idx_proj_state_dist", "CREATE INDEX IF NOT EXISTS idx_proj_state_dist ON projects(state, district);"),
     ("idx_proj_sanc_amt", "CREATE INDEX IF NOT EXISTS idx_proj_sanc_amt ON projects(sanctioned_amount);"),
-    ("idx_comp_sim_score", "CREATE INDEX IF NOT EXISTS idx_comp_sim_score ON comparable_projects(similarity_score);")
+    ("idx_comp_sim_score", "CREATE INDEX IF NOT EXISTS idx_comp_sim_score ON comparable_projects(similarity_score);"),
+    ("idx_risk_scores_work_code", "CREATE INDEX IF NOT EXISTS idx_risk_scores_work_code ON risk_scores(work_code);"),
+    ("idx_vouchers_vendor_name", "CREATE INDEX IF NOT EXISTS idx_vouchers_vendor_name ON expenditure_vouchers(vendor_name);"),
+    ("idx_alerts_status_priority", "CREATE INDEX IF NOT EXISTS idx_alerts_status_priority ON alerts(status, priority_score DESC);"),
+    ("idx_projects_fy_covering", "CREATE INDEX IF NOT EXISTS idx_projects_fy_covering ON projects(financial_year, sanctioned_amount, expenditure_amount, status);"),
+    ("idx_projects_state_covering", "CREATE INDEX IF NOT EXISTS idx_projects_state_covering ON projects(state, sanctioned_amount, expenditure_amount, status);"),
+    ("idx_projects_financial_covering", "CREATE INDEX IF NOT EXISTS idx_projects_financial_covering ON projects(recommended_amount, sanctioned_amount, disbursed_amount, expenditure_amount);"),
+    ("idx_risk_scores_level_conf", "CREATE INDEX IF NOT EXISTS idx_risk_scores_level_conf ON risk_scores(risk_level, confidence);")
 ]
 
 for name, sql in indices:

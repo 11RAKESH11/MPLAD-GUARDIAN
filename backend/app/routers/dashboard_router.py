@@ -19,7 +19,8 @@ def get_dashboard_overview():
         SUM(CASE WHEN status = 'Work Completed' THEN 1 ELSE 0 END) as completed_works,
         SUM(CASE WHEN status = 'Sanction' THEN 1 ELSE 0 END) as sanctioned_works,
         SUM(CASE WHEN status = 'Physical Inspection' THEN 1 ELSE 0 END) as inspection_works,
-        SUM(CASE WHEN status = 'Vendor Identification' THEN 1 ELSE 0 END) as vendor_id_works
+        SUM(CASE WHEN status = 'Vendor Identification' THEN 1 ELSE 0 END) as vendor_id_works,
+        SUM(CASE WHEN district IS NULL OR district = '' THEN 1 ELSE 0 END) as missing_dist
     FROM projects
     """, one=True)
     
@@ -69,8 +70,7 @@ def get_dashboard_overview():
     # 6. Data Quality Completeness Calculation
     t_dict = dict(totals)
     total_proj = t_dict["total_projects"] or 1
-    missing_dist_row = query_db("SELECT COUNT(*) as c FROM projects WHERE district IS NULL OR district = ''", one=True)
-    missing_dist = missing_dist_row["c"] if missing_dist_row else 0
+    missing_dist = t_dict.get("missing_dist") or 0
     completeness_pct = round(((total_proj * 6 - missing_dist) / (total_proj * 6)) * 100, 2)
 
     sanc_amt = t_dict["total_sanctioned_funds"] or 1.0
@@ -267,24 +267,31 @@ def get_dashboard_signal_distribution():
     ORDER BY count DESC
     """)
     
-    # 2. Risk score distribution
-    risk_dist = query_db("""
+    # 2. Risk score distribution and confidence tiers combined in a single query
+    risk_and_conf_dist = query_db("""
     SELECT 
         SUM(CASE WHEN risk_level = 'CRITICAL' THEN 1 ELSE 0 END) as critical,
         SUM(CASE WHEN risk_level = 'HIGH' THEN 1 ELSE 0 END) as high,
         SUM(CASE WHEN risk_level = 'MEDIUM' THEN 1 ELSE 0 END) as medium,
-        SUM(CASE WHEN risk_level = 'LOW' THEN 1 ELSE 0 END) as low
-    FROM risk_scores
-    """, one=True)
-    
-    # 3. Confidence tiers
-    confidence_dist = query_db("""
-    SELECT 
+        SUM(CASE WHEN risk_level = 'LOW' THEN 1 ELSE 0 END) as low,
         SUM(CASE WHEN confidence >= 80.0 THEN 1 ELSE 0 END) as high_confidence,
         SUM(CASE WHEN confidence >= 50.0 AND confidence < 80.0 THEN 1 ELSE 0 END) as moderate_confidence,
         SUM(CASE WHEN confidence < 50.0 THEN 1 ELSE 0 END) as limited_evidence
     FROM risk_scores
     """, one=True)
+    
+    rc_dict = dict(risk_and_conf_dist) if risk_and_conf_dist else {}
+    risk_dist = {
+        "critical": rc_dict.get("critical", 0),
+        "high": rc_dict.get("high", 0),
+        "medium": rc_dict.get("medium", 0),
+        "low": rc_dict.get("low", 0)
+    }
+    confidence_dist = {
+        "high_confidence": rc_dict.get("high_confidence", 0),
+        "moderate_confidence": rc_dict.get("moderate_confidence", 0),
+        "limited_evidence": rc_dict.get("limited_evidence", 0)
+    }
     
     type_map = {
         "COST_OUTLIER": "Cost Anomaly Signals",
@@ -307,8 +314,8 @@ def get_dashboard_signal_distribution():
         "signals": signals,
         "total_alerts": sum(s["count"] for s in signals),
         "overlap_note": "Signal categories may overlap across the same project records.",
-        "risk_distribution": dict(risk_dist) if risk_dist else {},
-        "confidence_distribution": dict(confidence_dist) if confidence_dist else {}
+        "risk_distribution": risk_dist,
+        "confidence_distribution": confidence_dist
     }
 
 @router.get("/what-changed")
